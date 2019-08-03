@@ -1,4 +1,4 @@
-from django.db import models,
+from django.db import models
 
 # Create your models here.
 
@@ -68,3 +68,69 @@ class Escola(models.Model):
 
     def __str__(self):
         return self.nome_escola + ' ' + self.rede_ensino
+
+
+class Aluno(models.Model):
+
+    TURMAS = (
+        ('5 SERIE', '5 SERIE'),
+        ('6 SERIE', '6 SERIE'),
+        ('7 SERIE', '7 SERIE'),
+        ('8 SERIE', '8 SERIE'),
+        ('1 ANO', '1 ANO'),
+        ('2 ANO', '2 ANO'),
+        ('3 ANO', '3 ANO')
+    )
+
+    GENEROS = (
+        ('Masculino', 'MASCULINO'),
+        ('Feminino', 'FEMININO')
+    )
+
+    escola = models.ForeignKey(
+        Escola, on_delete=True
+    )
+
+    nome_aluno = models.CharField(
+        max_length=255,
+        verbose_name='Nome do Aluno'
+    )
+
+    sobrenome_aluno = models.CharField(
+        max_length=255,
+        verbose_name='Sobrenome do Aluno'
+    )
+
+    nascimento_aluno = models.DateField(
+        verbose_name='Data de Nascimento do Aluno'
+    )
+
+    idade_aluno = models.PositiveIntegerField(
+        max_length=2,
+        verbose_name='Idade do Aluno'
+    )
+
+    genero_aluno = models.CharField(
+        max_length=255,
+        verbose_name='Gênero do Aluno'
+    )
+
+    turma_aluno = models.CharField(
+        max_length=255,
+        verbose_name='Turma do Aluno'
+        choices=TURMAS
+    )
+
+    pontuacao_aluno = models.PositiveIntegerField(
+        max_length=10,
+        verbose_name='Pontuação do Aluno',
+        default=0
+    )
+
+    data_criacao = models.DateTimeField(auto_now_add=True)
+    ativo = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nome_aluno + ' ' + self.sobrenome_aluno + ' ' self.turma_aluno
+
+
