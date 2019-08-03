@@ -88,7 +88,7 @@ class Aluno(models.Model):
     )
 
     escola = models.ForeignKey(
-        Escola, on_delete=True
+        Escola, on_delete=models.CASCADE
     )
 
     nome_aluno = models.CharField(
