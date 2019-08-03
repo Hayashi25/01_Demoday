@@ -29,7 +29,7 @@ class Escola(models.Model):
     )
 
     telefone_escola = models.PositiveIntegerField(
-        max_length=10,
+        max_length=11,
         verbose_name='Telefone da Escola'
     )
 
@@ -128,9 +128,46 @@ class Aluno(models.Model):
     )
 
     data_criacao = models.DateTimeField(auto_now_add=True)
+    data_atualização = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nome_aluno + ' ' + self.sobrenome_aluno + ' ' self.turma_aluno
 
 
+class Parceiro(models.Model):
+
+    TIPO_PARCERIA = (
+        ('Pessoa', 'Pessoa'),
+        ('Empresa/Ong', 'Empresa/Ong')
+    )
+
+    tipo_parceiro = models.CharField(
+        max_length=255,
+        verbose_name='Selecione o tipo de contato',
+        choices=TIPO_PARCERIA
+    )
+
+    nome_parceiro = models.CharField(
+        max_length=255,
+        verbose_name='Nome'
+    )
+
+    email_parceiro = models.EmailField(
+        max_length=255,
+        verbose_name='Email'
+    )
+
+    telefone_parceiro = models.PositiveIntegerField(
+        max_length=11,
+        verbose_name='Telefone'
+    )
+
+    mensagem_parceiro = models.TextField(
+        verbose_name='Escreva sua mensagem!'
+    )
+
+    data_mensagem = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nome_parceiro + ' - ' + self.tipo_parceiro
