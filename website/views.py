@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .forms import CadastroEscola
+
 
 # Create your views here.
 
@@ -15,8 +17,8 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 def cadastro(request):
-    context = {}
-    return render(request, 'cadastro.html', context)
+    form = CadastroEscola()
+    return render(request, 'cadastro.html', {'form': form})
 
 def login(request):
     context = {}
