@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CadastroEscola
+from django.contrib.auth.models import User
+from django.contrib.auth import login, logout, authenticate
 
 
 # Create your views here.
@@ -17,8 +19,20 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 def cadastro(request):
-    form = CadastroEscola()
-    return render(request, 'cadastro.html', {'form': form})
+    if request.method == "POST":
+        form = CadastroEscola(request.POST)
+        if form.is_valid():
+            escola = form.save()
+            user = User.objects.create_user(username=request.POST['codigo_acesso'], password=request.POST['senha_acesso'],
+                                            email=request.POST['email'])
+            return redirect("/")
+    else:
+        form = CadastroEscola()
+    
+    context = {
+        'form': form
+    }
+    return render(request, 'cadastro.html', context)
 
 def login(request):
     context = {}
