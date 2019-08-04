@@ -28,14 +28,14 @@ class Escola(models.Model):
         verbose_name='Endereço da Escola'
     )
 
-    telefone_escola = models.PositiveIntegerField(
-        max_length=11,
+    telefone_escola = models.CharField(
+        max_length=12,
         verbose_name='Telefone da Escola'
     )
 
     email_escola = models.EmailField(
         max_length=255,
-        verbose_name='E-mail da Escola'
+        verbose_name='E-mail da Escola',
         unique=True
     )
 
@@ -53,13 +53,13 @@ class Escola(models.Model):
 
     codigo_acesso = models.CharField(
         max_length=255,
-        verbose_name='Código de acesso',
+        verbose_name='Registre o código de acesso',
         unique=True
     )
 
     senha_acesso = models.CharField(
         max_length=255,
-        verbose_name='Senha de acesso',
+        verbose_name='Registre a senha de acesso',
         unique=True
     )
 
@@ -106,7 +106,6 @@ class Aluno(models.Model):
     )
 
     idade_aluno = models.PositiveIntegerField(
-        max_length=2,
         verbose_name='Idade do Aluno'
     )
 
@@ -117,12 +116,11 @@ class Aluno(models.Model):
 
     turma_aluno = models.CharField(
         max_length=255,
-        verbose_name='Turma do Aluno'
+        verbose_name='Turma do Aluno',
         choices=TURMAS
     )
 
     pontuacao_aluno = models.PositiveIntegerField(
-        max_length=10,
         verbose_name='Pontuação do Aluno',
         default=0
     )
@@ -132,7 +130,7 @@ class Aluno(models.Model):
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.nome_aluno + ' ' + self.sobrenome_aluno + ' ' self.turma_aluno
+        return self.nome_aluno + ' ' + self.sobrenome_aluno
 
 
 class Parceiro(models.Model):
@@ -158,8 +156,8 @@ class Parceiro(models.Model):
         verbose_name='Email'
     )
 
-    telefone_parceiro = models.PositiveIntegerField(
-        max_length=11,
+    telefone_parceiro = models.CharField(
+        max_length=12,
         verbose_name='Telefone'
     )
 
