@@ -4,14 +4,42 @@ from django.db import models
 
 class Escola(models.Model):
 
-    nome_escola = models.CharField(max_length=255, verbose_name='Nome da Escola', unique=True)
-    endereco_escola = models.CharField(max_length=255, verbose_name='Endereço da Escola')
-    telefone_escola = models.CharField(max_length=12, verbose_name='Número de Telefone', unique=True)
-    email = models.EmailField(max_length=255, verbose_name='Email', unique=True)
-    rede_ensino = models.CharField(max_length=255, verbose_name='Rede de Ensino')
-    tipo_ensino = models.CharField(max_length=255, verbose_name='Tipo de Ensino')
-    codigo_acesso = models.CharField(max_length=12, verbose_name='Código de acesso', unique=True)
-    senha_acesso = models.CharField(max_length=12, verbose_name='Senha de acesso')
+    nome_escola = models.CharField(
+        max_length=255,
+        verbose_name='Nome da Escola',
+        unique=True
+    )
+    endereco_escola = models.CharField(
+        max_length=255, 
+        verbose_name='Endereço da Escola'
+    )
+    telefone_escola = models.CharField(
+        max_length=12, 
+        verbose_name='Número de Telefone', 
+        unique=True
+    )
+    email = models.EmailField(
+        max_length=255, 
+        verbose_name='Email', 
+        unique=True
+    )
+    rede_ensino = models.CharField(
+        max_length=255, 
+        verbose_name='Rede de Ensino'
+    )
+    tipo_ensino = models.CharField(
+        max_length=255, 
+        verbose_name='Tipo de Ensino'
+    )
+    codigo_acesso = models.CharField(
+        max_length=12, 
+        verbose_name='Código de acesso', 
+        unique=True
+    )
+    senha_acesso = models.CharField(
+        max_length=12, 
+        verbose_name='Senha de acesso'
+    )
 
     data_requisicao = models.DateTimeField(auto_now_add=True)
     ativo = models.BooleanField(default=True)

@@ -47,5 +47,17 @@ def escola(request):
     return render(request, 'escola.html', context)
 
 def contato(request):
-    context = {}
+    if request.method == "POST":
+        form = CadastrarParceiros(request.POST)
+        if form.is_valid():
+            contato = form.save()
+            user = User.objects.create_user(username=request.POST['codigo_acesso'], password=request.POST['senha_acesso'],
+                                            email=request.POST['email'])
+            return redirect("/")
+    else:
+        form = CadastrarParceiros()
+    
+    context = {
+        'form': form
+    }
     return render(request, 'contato.html', context)
