@@ -1,4 +1,5 @@
 from django.db import models
+from website.choices import REDES_ENSINO, TIPOS_ENSINO, TIPO_PARCERIA
 
 # Create your models here.
 
@@ -112,11 +113,6 @@ class Aluno(models.Model):
 
 
 class Parceiro(models.Model):
-
-    TIPO_PARCERIA = (
-        ('Pessoa', 'Pessoa'),
-        ('Empresa/Ong', 'Empresa/Ong')
-    )
 
     tipo_parceiro = models.CharField(
         max_length=255,

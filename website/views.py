@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CadastroEscola
+from .forms import CadastrarParceiros
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 
@@ -51,8 +52,6 @@ def contato(request):
         form = CadastrarParceiros(request.POST)
         if form.is_valid():
             contato = form.save()
-            user = User.objects.create_user(username=request.POST['codigo_acesso'], password=request.POST['senha_acesso'],
-                                            email=request.POST['email'])
             return redirect("/")
     else:
         form = CadastrarParceiros()
