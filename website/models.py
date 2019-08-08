@@ -19,13 +19,13 @@ class Escola(models.Model):
         max_length=12, 
         verbose_name='Número de Telefone', 
         unique=True,
-        error_messages={'unique': 'Este número de telefone já existe. Verifique e tente novamente.'}
+        error_messages={'unique': 'Este número de telefone já existe em nosso sistema. Verifique e tente novamente.'}
     )
     email = models.EmailField(
         max_length=255, 
         verbose_name='Email', 
         unique=True,
-        error_messages={'unique': 'Escola com este nome já está cadastrada em nosso sistema.'}
+        error_messages={'unique': 'Este e-mail já está cadastrada em nosso sistema.'}
     )
     rede_ensino = models.CharField(
         max_length=255, 
