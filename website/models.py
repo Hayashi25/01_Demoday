@@ -8,7 +8,8 @@ class Escola(models.Model):
     nome_escola = models.CharField(
         max_length=255,
         verbose_name='Nome da Escola',
-        unique=True
+        unique=True,
+        error_messages={'unique': 'Escola com este nome já está cadastrada em nosso sistema.'}
     )
     endereco_escola = models.CharField(
         max_length=255, 
@@ -17,12 +18,14 @@ class Escola(models.Model):
     telefone_escola = models.CharField(
         max_length=12, 
         verbose_name='Número de Telefone', 
-        unique=True
+        unique=True,
+        error_messages={'unique': 'Este número de telefone já existe. Verifique e tente novamente.'}
     )
     email = models.EmailField(
         max_length=255, 
         verbose_name='Email', 
-        unique=True
+        unique=True,
+        error_messages={'unique': 'Escola com este nome já está cadastrada em nosso sistema.'}
     )
     rede_ensino = models.CharField(
         max_length=255, 
@@ -34,12 +37,13 @@ class Escola(models.Model):
     )
     codigo_acesso = models.CharField(
         max_length=12, 
-        verbose_name='Código de acesso', 
-        unique=True
+        verbose_name='Registre um código de acesso', 
+        unique=True,
+        error_messages={'unique': 'Código de acesso já existente.'}
     )
     senha_acesso = models.CharField(
         max_length=12, 
-        verbose_name='Senha de acesso'
+        verbose_name='Registre uma senha de acesso'
     )
 
     data_requisicao = models.DateTimeField(auto_now_add=True)
