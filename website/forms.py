@@ -6,7 +6,7 @@ class CadastroEscola(forms.ModelForm):
     class Meta:
         model = Escola
         fields = ('nome_escola', 'endereco_escola', 'telefone_escola', 'email',
-                  'rede_ensino', 'tipo_ensino', 'codigo_acesso', 'senha_acesso')
+                  'rede_ensino', 'tipo_ensino', 'codigo_acesso', 'senha_acesso', 'confirmar_senha')
         widgets = {
             'nome_escola': forms.TextInput(attrs={
                 'required': True,
@@ -39,7 +39,32 @@ class CadastroEscola(forms.ModelForm):
             'senha_acesso': forms.PasswordInput(attrs={
                 'required': True, 
                 'id': 'senha_acesso'}),
+
+            'confirmar_senha': forms.PasswordInput(attrs={
+                'required': True,
+                'id': 'confirmar_senha'}), 
         }
+
+    def clean(self):
+        cleaned_data = super(CadastroEscola, self).clean()
+        senha_acesso = cleaned_data.get('senha_acesso')
+
+        tamanho_minimo = 8
+        if len(senha_acesso) < tamanho_minimo:
+            msg = 'A senha deve ter pelo menos %s caracteres.' %(str(tamanho_minimo))
+            self.add_error('senha_acesso', msg)
+
+        if not any(c.isupper() for c in senha_acesso):
+            msg = 'A senha deve conter pelo menos 1 letra maiúscula.'
+            self.add_error('senha_acesso', msg)
+
+        confirmar_senha = cleaned_data.get('confirmar_senha')
+        if senha_acesso and confirmar_senha:
+            if senha_acesso != confirmar_senha:
+                msg = 'As duas senhas devem corresponder.'
+                self.add_error('confirmar_senha', msg)
+        return cleaned_data
+
 
 class CadastrarParceiros(forms.ModelForm):
     class Meta:

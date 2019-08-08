@@ -9,7 +9,7 @@ class Escola(models.Model):
         max_length=255,
         verbose_name='Nome da Escola',
         unique=True,
-        error_messages={'unique': 'Escola com este nome já está cadastrada em nosso sistema.'}
+        error_messages={'unique': 'Escola com este nome já está cadastrado em nosso sistema.'}
     )
     endereco_escola = models.CharField(
         max_length=255, 
@@ -25,7 +25,7 @@ class Escola(models.Model):
         max_length=255, 
         verbose_name='Email', 
         unique=True,
-        error_messages={'unique': 'Este e-mail já está cadastrada em nosso sistema.'}
+        error_messages={'unique': 'Este e-mail já está cadastrado em nosso sistema.'}
     )
     rede_ensino = models.CharField(
         max_length=255, 
@@ -44,6 +44,11 @@ class Escola(models.Model):
     senha_acesso = models.CharField(
         max_length=12, 
         verbose_name='Registre uma senha de acesso'
+    )
+
+    confirmar_senha = models.CharField(
+        max_length=12,
+        verbose_name='Confirme a senha de acesso'
     )
 
     data_requisicao = models.DateTimeField(auto_now_add=True)
