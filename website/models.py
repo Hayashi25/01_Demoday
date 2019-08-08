@@ -1,5 +1,5 @@
 from django.db import models
-from website.choices import REDES_ENSINO, TIPOS_ENSINO, TIPO_PARCERIA
+from website.choices import REDES_ENSINO, TIPOS_ENSINO
 
 # Create your models here.
 
@@ -121,34 +121,21 @@ class Aluno(models.Model):
         return self.nome_aluno + ' ' + self.sobrenome_aluno
 
 
-class Parceiro(models.Model):
+class Contato(models.Model):
 
-    tipo_parceiro = models.CharField(
-        max_length=255,
-        verbose_name='Selecione o tipo de contato',
-        choices=TIPO_PARCERIA
-    )
-
-    nome_parceiro = models.CharField(
-        max_length=255,
-        verbose_name='Nome'
-    )
-
-    email_parceiro = models.EmailField(
+    from_email = models.EmailField(
         max_length=255,
         verbose_name='Email'
     )
 
-    telefone_parceiro = models.CharField(
-        max_length=12,
-        verbose_name='Telefone'
+    subject = models.CharField(
+        max_length=255,
+        verbose_name='Nome'
     )
 
-    mensagem_parceiro = models.TextField(
-        verbose_name='Escreva sua mensagem!'
+    message = models.TextField(
+        verbose_name='Escreva sua mensagem'
     )
-
-    data_mensagem = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.nome_parceiro + ' - ' + self.tipo_parceiro
+        return self.subject + ' - ' + self.from_email

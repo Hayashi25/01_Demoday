@@ -11,8 +11,3 @@ TIPOS_ENSINO = (
     ('Ensino Médio', 'Ensino Médio'),
     ('Ambos', 'Ambos')
 )
-
-TIPO_PARCERIA = (
-    ('Pessoa', 'Pessoa'),
-    ('Empresa/Ong', 'Empresa/Ong')
-)
