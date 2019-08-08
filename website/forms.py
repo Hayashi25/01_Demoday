@@ -1,6 +1,6 @@
 from django import forms
-from .models import Escola, Aluno, Parceiro
-from website.choices import REDES_ENSINO, TIPOS_ENSINO, TIPO_PARCERIA
+from .models import Escola, Aluno, Contato
+from website.choices import REDES_ENSINO, TIPOS_ENSINO
 
 class CadastroEscola(forms.ModelForm):
     class Meta:
@@ -66,29 +66,20 @@ class CadastroEscola(forms.ModelForm):
         return cleaned_data
 
 
-class CadastrarParceiros(forms.ModelForm):
+class ContatarPessoas(forms.ModelForm):
     class Meta:
-        model = Parceiro
-        fields = ('tipo_parceiro', 'nome_parceiro', 'email_parceiro', 'telefone_parceiro', 'mensagem_parceiro')
+        model = Contato
+        fields = ('from_email', 'subject', 'message')
         widgets = {
-            'tipo_parceiro': forms.Select(choices=TIPO_PARCERIA, attrs={
+            'subject': forms.TextInput(attrs={
                 'required': True,
-                'id': 'tipo_parceiro'}),
+                'id': 'subject'}),
 
-            'nome_parceiro': forms.TextInput(attrs={
+            'from_email': forms.EmailInput(attrs={
                 'required': True,
-                'id': 'nome_parceiro'}),
+                'id': 'from_email'}),
 
-            'email_parceiro': forms.EmailInput(attrs={
+            'message': forms.Textarea(attrs={
                 'required': True,
-                'id': 'email_parceiro'}),
-
-            'telefone_parceiro': forms.NumberInput(attrs={
-                'required': True,
-                'id': 'telefone_parceiro'}),
-
-            'mensagem_parceiro': forms.TextInput(attrs={
-                'required': True,
-                'id': 'mensagem_parceiro'}),
+                'id': 'message'}),
         }
-

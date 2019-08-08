@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import CadastroEscola
-from .forms import CadastrarParceiros
+from .forms import CadastroEscola, ContatarPessoas
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 # Create your views here.
@@ -48,15 +49,26 @@ def escola(request):
     return render(request, 'escola.html', context)
 
 def contato(request):
-    if request.method == "POST":
-        form = CadastrarParceiros(request.POST)
-        if form.is_valid():
-            contato = form.save()
-            return redirect("/")
+    if request.method == "GET":
+        form = ContatarPessoas()
+
     else:
-        form = CadastrarParceiros()
-    
+        form = ContatarPessoas(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            
+            msg_email = str(from_email) + " - " + str(message)
+
+            try: 
+                send_mail(subject, msg_email, from_email, ['projeto.formiguinhaestacaohack@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect("/")
+
     context = {
         'form': form
     }
+
     return render(request, 'contato.html', context)
