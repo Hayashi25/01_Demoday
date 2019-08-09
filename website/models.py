@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from website.choices import REDES_ENSINO, TIPOS_ENSINO
 
 # Create your models here.
@@ -136,6 +137,10 @@ class Contato(models.Model):
     message = models.TextField(
         verbose_name='Escreva sua mensagem'
     )
+
+    data_mensagem = models.DateTimeField('Data',
+    default=timezone.now(),
+    blank=False)
 
     def __str__(self):
         return self.subject + ' - ' + self.from_email

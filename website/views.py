@@ -55,10 +55,10 @@ def contato(request):
     else:
         form = ContatarPessoas(request.POST)
         if form.is_valid():
+            pessoa = form.save()
             subject = form.cleaned_data['subject']
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
-            pessoa = form.save()
             msg_email = str(from_email) + " - " + str(message)
 
             try: 
