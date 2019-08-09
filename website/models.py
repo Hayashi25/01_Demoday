@@ -139,8 +139,7 @@ class Contato(models.Model):
     )
 
     data_mensagem = models.DateTimeField('Data',
-    default=timezone.now(),
-    blank=False)
+    auto_now_add=True)
 
     def __str__(self):
         return self.subject + ' - ' + self.from_email
