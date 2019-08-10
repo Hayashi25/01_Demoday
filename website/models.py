@@ -16,12 +16,12 @@ class Escola(models.Model):
         max_length=255, 
         verbose_name='Endereço da Escola'
     )
-    telefone_escola = models.CharField(
+    
+    diretor_responsavel = models.CharField(
         max_length=12, 
-        verbose_name='Número de Telefone', 
-        unique=True,
-        error_messages={'unique': 'Este número de telefone já existe em nosso sistema. Verifique e tente novamente.'}
+        verbose_name='Diretor Responsável'
     )
+
     email = models.EmailField(
         max_length=255, 
         verbose_name='Email', 
@@ -38,18 +38,18 @@ class Escola(models.Model):
     )
     codigo_acesso = models.CharField(
         max_length=12, 
-        verbose_name='Registre um código de acesso', 
+        verbose_name='Código de acesso', 
         unique=True,
-        error_messages={'unique': 'Código de acesso já existente.'}
+        error_messages={'unique': 'Código de acesso já existente.'},
     )
     senha_acesso = models.CharField(
         max_length=12, 
-        verbose_name='Registre uma senha de acesso'
+        verbose_name='Senha de acesso',
     )
 
     confirmar_senha = models.CharField(
         max_length=12,
-        verbose_name='Confirme a senha de acesso'
+        verbose_name='Confirme a senha de acesso',
     )
 
     data_requisicao = models.DateTimeField(auto_now_add=True)
