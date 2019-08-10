@@ -1,0 +1,162 @@
+body{
+    background-image: url('/static/img/fundocadastro.jpg');
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.containercadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 15px 5px #222;
+}
+
+.infcadastro{
+    width: 30%;
+    height: 600px;
+    background-color: #29402F;
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleinfcadastro{
+    width: 80%;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 35px;   
+}
+
+.textocadastro{
+    width: 80%;
+    height: 70%;
+    font-size: 17px;    
+    margin-top: 25px;
+}
+
+.botao_entrar{
+    margin-bottom: 60px;
+}
+
+.pbotao{
+    margin-bottom: 7px;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.cadastro{
+    width: 60%;
+    height: 600px;
+    background-color:white;
+    color: #666666;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.45);
+}
+
+.cadastro h2{
+    color: #29402F;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+form{
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 45px;
+    margin-left: 10px;
+}
+
+.divform{
+    display: flex;
+    flex-direction: column;
+    height: 75px;
+    margin-left: 22.5px;
+    float: left;
+}
+
+label{
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+input{
+    width: 200px;
+    height: 27px;
+    border: 2px solid green;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    float: left;
+}
+
+
+#codigo_acesso{ 
+    width: 430px;
+} 
+
+select{
+    width: 210px;   
+    height: 27px;
+    border: 2px solid green;
+    margin-bottom: 5px;
+}
+
+input, select{
+    border-radius: 8px;
+}
+
+input:focus{
+    border: solid 2px rgb(139, 218, 22); 
+}
+
+input[value=Cadastrar]{
+    background-color: #46A65E;
+    border: none;
+    color: white;
+    margin-left: 25px;
+    width: 440px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[value=Cadastrar]:hover{
+    background-color: rgb(92, 201, 119);
+}
+
+input[value=Entrar]{
+    width: 30%;
+    height: 10%;
+    background-color: #46A65E;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[value=Entrar]:hover{
+    background-color: rgb(92, 201, 119);
+}
+
+.errorlist{
+    margin: 0px;
+    font-size: 10.5px;
+    padding: 0px;
+    color: rgb(204, 19, 19);
+    display: flex;
+    list-style: none;
+}

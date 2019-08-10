@@ -1,7 +1,46 @@
-<h1>CADASTRO</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+    <title>Cadastro da Escola</title>
+</head>
+<body>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Cadastrar">
-</form>
+<div class="containercadastro">
+    <div class="infcadastro">
+        <h2 class="titleinfcadastro">BEM-VINDO AO PROJETO FORMIGUINHA!</h2>
+        <p class="textocadastro">Somos apaixonados por sustentabilidade e sabemos como ela é uma ferramenta poderosa de
+            <strong>impacto positivo</strong>. Faça parte deste movimento e conte com a gente para transformar a cultura sustentável da sua
+            escola e a vida de todos os alunos! <br>
+            <br> O registro deve ser feito pelo respectivo diretor responsável de sua escola para que possamos efetivar o cadastro e
+            colocar o Projeto Formiguinha em ação! =)
+        </p>
+        
+        <p class="pbotao"><strong>A escola já está cadastrada?</strong></p>
+        <input class="botao_entrar" type="button" value="Entrar">
+        
+    </div>
+
+    <div class="cadastro">
+        <h2>INFORMAÇÕES DA ESCOLA</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="divform">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
