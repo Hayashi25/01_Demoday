@@ -1,7 +1,49 @@
-<h1>CONTATO</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Enviar">
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Spinnaker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <title>Contato</title>
+</head>
+
+<body>
+    {% include 'shared/nav.html' %}
+
+    <section>
+        <div class="div_contato">
+            <div class="informacao_contato">
+                <div class="texto_contato">
+                    <h2>ADORARÍAMOS CONVERSAR COM VOCÊ!</h2>
+                    <p class="p_contato">Deixe uma mensagem e responderemos o mais breve possível.</p>
+                </div>
+                <div><img class="img_formiga" src="/static/img/contato/formiguinha.png" alt=""></div>
+            </div>
+            
+            <div class="form_contato">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="div_formcontato">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                    {% endfor %}
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    {% include 'shared/footer.html' %}
+
+    </body>
+</html>
