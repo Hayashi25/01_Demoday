@@ -123,19 +123,19 @@ class Aluno(models.Model):
 
 
 class Contato(models.Model):
-
-    from_email = models.EmailField(
-        max_length=255,
-        verbose_name='Email'
-    )
-
+    
     subject = models.CharField(
         max_length=255,
         verbose_name='Nome'
     )
+    
+    from_email = models.EmailField(
+        max_length=255,
+        verbose_name='E-mail'
+    )
 
     message = models.TextField(
-        verbose_name='Escreva sua mensagem'
+        verbose_name='Mensagem'
     )
 
     data_mensagem = models.DateTimeField('Data',
