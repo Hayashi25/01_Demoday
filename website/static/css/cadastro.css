@@ -134,7 +134,7 @@ input[value=Cadastrar]{
 }
 
 input[value=Cadastrar]:hover{
-    background-color: rgb(92, 201, 119);
+    background-color:  #29402f;
 }
 
 input[value=Entrar]{
@@ -149,7 +149,7 @@ input[value=Entrar]{
 }
 
 input[value=Entrar]:hover{
-    background-color: rgb(92, 201, 119);
+    background-color: rgb(100, 207, 127);
 }
 
 .errorlist{
