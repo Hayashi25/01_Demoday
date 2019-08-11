@@ -1,1 +1,49 @@
-<h1>INDEX</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Spinnaker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <script defer src="{% static 'js/index.js' %}"></script>
+    <title>Projeto Formiguinha</title>
+</head>
+
+<body>
+    {% include 'shared/nav.html' %}
+
+    <section class="carrossel" id="slide_caixa">
+        <!-- <div class="setinhas">
+                    <a href="#" class="setinha_menor">&lt;</a>
+                    <a href="#" class="setinha_maior">&gt;</a>
+            </div> -->
+    </section>
+
+    <!-- CRIAR SESSÃO PARA A PESQUISA DE DADOS -->
+    <section class="dados">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <!-- CRIAR SESSAO PARA OS EIXOS QUE O PROJETO ABORDA -->
+    <section class="steps">
+        <div>
+            <img src="static/img/index/passos.png" alt="">
+        </div>
+        <div>
+            <img src="static/img/index/passos.png" alt="">
+        </div>
+        <div>
+            <img src="static/img/index/passos.png" alt="">
+        </div>
+    </section>
+
+    {% include 'shared/footer.html' %}
+</body>

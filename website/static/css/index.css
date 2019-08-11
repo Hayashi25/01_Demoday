@@ -1,0 +1,82 @@
+body{
+    display: grid;
+    grid-template-areas: 'carrossel carrossel carrossel carrossel'
+        'dados dados dados dados'
+        'steps steps steps steps'
+        'footer footer footer footer';
+    grid-template-rows: 100vh 60vh 60vh 30vh;
+    grid-template-columns: 24.7vw 24.7vw 24.7vw 24.7vw;
+    margin: 0;
+    font-family: 'Spinnaker', sans-serif;
+}
+
+.carrossel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: carrossel;
+}
+
+#slide_caixa{
+    height: 100%;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.5s;
+    background-size: cover;
+
+}
+
+/* ESTILIZAR SETINHAS PARA A TROCA DE IMAGEM */
+/* 
+.setinhas{
+    display: flex;
+    align-items: center;
+}
+.setinha_maior, .setinha_menor{
+width: 80px;
+height: 80px;
+color: #fff;
+text-align: center;
+font-size: 3em;
+border-radius: 100px;
+background: rgba(0, 0, 0, 0.5);
+position: absolute;
+top:220px;
+left: 15px;
+}
+.setinha_maior{
+right: 15px;
+left: auto;
+}
+.setinha_maior:hover, .setinha_menor:hover{
+   background: rgba(0, 0, 0, 0.8);
+   transition-property: all;
+   transition-duration: .5s;
+   transition-timing-function: ease-out;
+   transition-delay: 0.2s;
+   cursor: pointer;
+} */
+
+.dados{
+    background-color: rgb(31, 42, 140);
+    grid-area: dados;
+}
+
+.steps{
+    /* background-color: #F2DA5E; */
+    grid-area: steps;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steps div{
+    padding: 20px;
+}
+
+.steps div img{
+    height: 80px;
+    width: 80px;
+}

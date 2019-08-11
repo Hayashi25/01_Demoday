@@ -4,7 +4,7 @@ body{
 
 #menu_login{
     align-items: center;
-    background-color: #29402f;
+    background-color: #3c7c21;
     display: flex;
     position: fixed;
     font-family: 'Spinnaker', sans-serif;
@@ -16,7 +16,7 @@ body{
 
 #menu_logout{
     align-items: center;
-    background-color: #29402f;
+    background-color: #3c7c21;
     display: flex;
     position: fixed;
     font-family: 'Spinnaker', sans-serif;
