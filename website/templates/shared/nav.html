@@ -1,13 +1,30 @@
-<nav id="menu">
+{% if user.is_authenticated %}
+<nav id="menu_logout">
     <a href="/"><img src="/static/img/nav/icone.png" alt=""></a>
-            <div class="menu_esquerdo">
+    <div class="menu_esquerdo">
         <a href="/loja">Loja</a>
         <a href="">Explore</a>
         <a href="#sobre">Sobre Nós</a>
         <a href="/contato">Contato</a>
-        </div>
-        <div class="menu_direito">
-            <a href="/cadastro">Cadastro da Escola</a>
-            <a href="/login">Entrar</a>
-        </div>
+        <a href="/cadastro">Escola</a>
+    </div>
+    <div class="menu_direito">
+        <a href="/logout">Sair</a>
+    </div>
 </nav>
+
+{% else %}
+<nav id="menu_login">
+    <a href="/"><img src="/static/img/nav/icone.png" alt=""></a>
+    <div class="menu_esquerdo">
+        <a href="/loja">Loja</a>
+        <a href="">Explore</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="/contato">Contato</a>
+        <a href="/cadastro">Escola</a>
+    </div>
+    <div class="menu_direito">
+        <a href="/login">Entrar</a>
+    </div>
+</nav>
+{% endif %}

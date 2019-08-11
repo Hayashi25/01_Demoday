@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from .forms import CadastroEscola, ContatarPessoas
 from django.contrib.auth.models import User
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout, authenticate
+from django.contrib.auth import login as auth_login
+from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 
-
-# Create your views here.
 
 def index(request):
     context = {}
@@ -37,13 +38,27 @@ def cadastro(request):
     return render(request, 'cadastro.html', context)
 
 def login(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            return redirect ('/')
+        else:
+            messages.error(request, 'Usuário e/ou senha inválido(s). Favor tentar novamente.')
     context = {}
     return render(request, 'login.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect ('/login')
 
 def aluno(request):
     context = {}
     return render(request, 'aluno.html', context)
 
+@login_required(login_url='/login')
 def escola(request):
     context = {}
     return render(request, 'escola.html', context)
@@ -70,5 +85,4 @@ def contato(request):
     context = {
         'form': form
     }
-
     return render(request, 'contato.html', context)

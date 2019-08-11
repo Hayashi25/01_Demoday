@@ -4,6 +4,7 @@ from website.views import loja
 from website.views import blog
 from website.views import cadastro
 from website.views import login
+from website.views import logout_user
 from website.views import aluno
 from website.views import escola
 from website.views import contato
@@ -14,6 +15,7 @@ urlpatterns = [
     path('blog', blog),
     path('cadastro', cadastro),
     path('login', login),
+    path('logout', logout_user),
     path('portaldoaluno', aluno),
     path('portaldaescola', escola),
     path('contato', contato)
