@@ -20,7 +20,7 @@
 
     <section>
         <div class="section_login">
-            <div class="icones">
+            <div id="icones" class="icones">
                 <div class="opt_aluno">
                     <img class="icon_student" src="/static/img/login/student.png" alt="">
                     <h3>Portal do Aluno</h3>
@@ -32,16 +32,34 @@
                 </div>
             </div>
 
-            <!-- <div id="login_aluno">
-            </div> -->
+            <div id="login_aluno">
+                <img class="back" src="static/img/login/testeback.jpg" alt="">
+                <form action="" method="POST">
+                    <img class="pop_upal" src="static/img/login/student.png" alt="">
+                    {% csrf_token %}
+                    <div class="form_aluno">
+                        <input type="text" name="codigoaluno" placeholder="Código de Acesso">
+                        <input type="password" name="datanascimento" placeholder="Data de Nascimento">
+                    </div>
+                    <div>
+                        {% for message in messages %}
+                        <div class="alert alert-danger">
+                            <strong>Erro!</strong> {{ message }}
+                        </div>
+                        {% endfor %}
+                        <input type="submit" value="LOGIN">
+                    </div>
+                </form>
+            </div>
 
             <div id="login_escola">
+                <img class="back" src="static/img/login/testeback.jpg" alt="">
                 <form action="login" method="POST">
                     <img class="pop_upsc" src="static/img/login/school.png" alt="">
                     {% csrf_token %}
                     <div class="form_escola">
-                        <input type="text" id="username" name="username" placeholder="Código de acesso">
-                        <input type="password" id="password" name="password" placeholder="Senha de acesso">
+                        <input type="text" id="username" name="username" placeholder="Código de Acesso">
+                        <input type="password" id="password" name="password" placeholder="Senha de Acesso">
                     </div>
                     <div>
                         {% for message in messages %}

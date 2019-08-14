@@ -15,6 +15,7 @@ body{
 
 nav{
     grid-area: nav;
+    z-index: 2;
 }
 
 section{
@@ -44,6 +45,26 @@ section{
     display: none;
 }
 
+.back{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+    left: 485px;
+}
+
+#login_aluno{
+    position: static;
+    height: 117.833px;
+    width: 383.1px;
+    margin-top: 115px;
+    margin-right: 75px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* display: none; */
+}
+
 #login_escola{
     position: static;
     height: 117.833px;
@@ -53,6 +74,7 @@ section{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    display: none;
 }
 
 .form_escola{
@@ -86,9 +108,17 @@ section{
     width: 184px;
 }
 
+.pop_upal{
+    width: 175.883px;
+    height: 175.883px;
+    margin-left: 95px;
+    margin-top: 165px;
+    margin-bottom: 30px;
+}
+
 .pop_upsc{
     width: 185px;
-    height: 175.883;
+    height: 175.883px;
     margin-left: 95px;
     margin-top: 165px;
     margin-bottom: 30px;
