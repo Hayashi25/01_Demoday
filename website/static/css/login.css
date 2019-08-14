@@ -5,30 +5,150 @@ body{
     line-height: 1.5;
     color: #212529;
     text-align: left;
+    display: grid;
+    grid-template-areas: 'nav nav nav nav'
+                         'section section section section'
+                         'footer footer footer footer';
+    grid-template-rows: 10vh 90vh 30vh;
+    grid-template-columns: 32.9vw 32.9vw 32.9vw;
 }
 
-label{
-    display: inline-block;
-    margin-bottom: .5rem;
+nav{
+    grid-area: nav;
+}
+
+section{
+    grid-area: section;
+    display: flex;
+    justify-content: center;
+    background-image: url('/static/img/login/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section_login{
+    height: 93%;
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.icones{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 250px;
+    display: none;
+}
+
+#login_escola{
+    position: static;
+    height: 117.833px;
+    width: 383.1px;
+    margin-top: 115px;
+    margin-right: 75px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form_escola{
+    display: flex;
+    flex-direction: column;
+}
+
+.opt_aluno{
+    margin-right: 50px;
+    z-index: 2;
+}
+
+.opt_escola{
+    margin-left: 50px;
+    z-index: 2;
+}
+
+.opt_aluno h3, .opt_escola h3{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 16px;
+}
+
+.icon_student{
+    height: 175px;
+    width: 175px;
+}
+
+.icon_school{
+    height: 175px;
+    width: 184px;
+}
+
+.pop_upsc{
+    width: 185px;
+    height: 175.883;
+    margin-left: 95px;
+    margin-top: 165px;
+    margin-bottom: 30px;
+}
+
+form{
+    border-radius: 10px;
+    width: 100%;
+    padding: 30px;
+}
+
+h2{
+    width: 449px;
+    color: white;
+}
+
+footer{
+    grid-area: footer;
 }
 
 input{
+    width: 70%;
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    margin-left: 50px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
-.alert-danger {
+input[type=submit]{
+    background: #46A65E;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    width: 70%;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+input[type=submit]:hover{
+    background: rgb(46, 114, 63);
+}
+
+.alert-danger{
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
 
-.alert {
+.alert{
     position: relative;
     padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
     border: 1px solid transparent;
     border-top-color: transparent;
     border-right-color: transparent;

@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,32 +14,50 @@
     <script defer src="{% static 'js/login.js' %}"></script>
     <title>Página de Login</title>
 </head>
+
 <body>
-    <!-- {% include 'shared/nav.html' %} -->
+    {% include 'shared/nav.html' %}
 
-    <div id="login_aluno">
-    </div>
-
-    <div id="login_escola">
-        <form action="login" method="POST">
-        {% csrf_token %}
-            <h2>Autenticação de Usuário - Escola</h2>
-            <div class="form_escola">
-                <label for="username">Código de Acesso</label>
-                <input type="text", id="username", name="username">
-                <label for="password">Senha de Acesso</label>
-                <input type="password", id="password", name="password">
+    <section>
+        <div class="section_login">
+            <div class="icones">
+                <div class="opt_aluno">
+                    <img class="icon_student" src="/static/img/login/student.png" alt="">
+                    <h3>Portal do Aluno</h3>
+                </div>
+                
+                <div class="opt_escola">
+                    <img class="icon_school" src="/static/img/login/school.png" alt="">
+                    <h3>Portal da Escola</h3>
+                </div>
             </div>
-            <div>
-                {% for message in messages %}
-                    <div class="alert alert-danger">
-                    <strong>Erro!</strong> {{ message }}
+
+            <!-- <div id="login_aluno">
+            </div> -->
+
+            <div id="login_escola">
+                <form action="login" method="POST">
+                    <img class="pop_upsc" src="static/img/login/school.png" alt="">
+                    {% csrf_token %}
+                    <div class="form_escola">
+                        <input type="text" id="username" name="username" placeholder="Código de acesso">
+                        <input type="password" id="password" name="password" placeholder="Senha de acesso">
                     </div>
-                {% endfor %}
-                <input type="submit" value="Entrar">
+                    <div>
+                        {% for message in messages %}
+                        <div class="alert alert-danger">
+                            <strong>Erro!</strong> {{ message }}
+                        </div>
+                        {% endfor %}
+                        <input type="submit" value="LOGIN">
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
 
+        </div>
+    </section>
+
+    {% include 'shared/footer.html' %}
 </body>
+
 </html>
