@@ -101,7 +101,6 @@ input{
     float: left;
 }
 
-
 #codigo_acesso{ 
     width: 430px;
 } 
@@ -138,18 +137,29 @@ input[value=Cadastrar]:hover{
 }
 
 input[value=Entrar]{
-    width: 30%;
-    height: 10%;
-    background-color: #46A65E;
     border: none;
+    height: 50px;
+    width: 60%;
     color: white;
+    background-color: #46a65e;
     font-weight: bolder;
     font-size: 20px;
     cursor: pointer;
 }
 
+.entrar{
+    width: 200px;
+    height: 27px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 78px;
+    margin-left: 75px;
+}
+
 input[value=Entrar]:hover{
-    background-color: rgb(100, 207, 127);
+    background-color: rgb(57, 185, 89);
 }
 
 .errorlist{
