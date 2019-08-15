@@ -1,0 +1,76 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+    display: grid;
+    grid-template-areas: 'nav nav nav nav'
+                         'section section section section'
+                         'footer footer footer footer';
+    grid-template-rows: 10vh 90vh 30vh;
+    grid-template-columns: 32.9vw 32.9vw 32.9vw;         
+}
+
+nav{
+    grid-area: nav;
+    z-index: 2;
+}
+
+section{
+    grid-area: section;
+}
+
+footer{
+    grid-area: footer;
+}
+
+h1{
+    text-align: center;
+}
+
+.cadastro_aluno{    
+    display: flex;
+}
+
+.cadastro_aluno form{
+    position: absolute;
+    left: 485px;
+    top: 200px;
+    right: 0px;
+    width: 30%;
+}
+
+.divform{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 7px;
+}
+
+.bt_cadal{
+    margin-left: 125px;
+    margin-top: 10px;
+    width: 140px;
+}
+
+label{
+    font-size: 17px;
+    font-weight: lighter;
+    color: #666666;
+}
+
+input, select{
+    border: 2px solid green;
+    border-radius: 8px;
+    height: 25px;
+    padding-left: 5px;
+}
+
+input{
+    width: 170px;
+}
+
+select{
+    width: 177px;
+}
+
+#pontuacao_aluno, label[for=pontuacao_aluno]{
+    display: none;
+}
