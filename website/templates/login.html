@@ -21,19 +21,22 @@
     <section>
         <div class="section_login">
             <div id="icones" class="icones">
-                <div class="opt_aluno">
+                <div class="opt_aluno" onclick="javascript: logarAluno();">
                     <img class="icon_student" src="/static/img/login/student.png" alt="">
                     <h3>Portal do Aluno</h3>
                 </div>
                 
-                <div class="opt_escola">
+                <!-- <div class="borda_login">
+                </div> -->
+
+                <div class="opt_escola" onclick="javascript: logarEscola();">
                     <img class="icon_school" src="/static/img/login/school.png" alt="">
                     <h3>Portal da Escola</h3>
                 </div>
             </div>
 
             <div id="login_aluno">
-                <img class="back" src="static/img/login/testeback.jpg" alt="">
+                <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.jpg" alt="">
                 <form action="" method="POST">
                     <img class="pop_upal" src="static/img/login/student.png" alt="">
                     {% csrf_token %}
@@ -53,7 +56,7 @@
             </div>
 
             <div id="login_escola">
-                <img class="back" src="static/img/login/testeback.jpg" alt="">
+                <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.jpg" alt="">
                 <form action="login" method="POST">
                     <img class="pop_upsc" src="static/img/login/school.png" alt="">
                     {% csrf_token %}

@@ -42,7 +42,6 @@ section{
     align-items: center;
     position: absolute;
     top: 250px;
-    display: none;
 }
 
 .back{
@@ -51,45 +50,34 @@ section{
     position: relative;
     top: 150px;
     left: 485px;
+    cursor: pointer;
 }
 
-#login_aluno{
-    position: static;
+#login_escola, #login_aluno{
+    position: absolute;
     height: 117.833px;
     width: 383.1px;
     margin-top: 115px;
     margin-right: 75px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    /* display: none; */
-}
-
-#login_escola{
-    position: static;
-    height: 117.833px;
-    width: 383.1px;
-    margin-top: 115px;
-    margin-right: 75px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    display: none;
-}
-
-.form_escola{
-    display: flex;
     flex-direction: column;
 }
 
 .opt_aluno{
     margin-right: 50px;
-    z-index: 2;
+    cursor: pointer;
 }
+
+/* .borda_login{
+    width: 0.3px;
+    height: 200px;
+    border: 1px solid black;
+} */
 
 .opt_escola{
     margin-left: 50px;
-    z-index: 2;
+    cursor: pointer;
 }
 
 .opt_aluno h3, .opt_escola h3{
