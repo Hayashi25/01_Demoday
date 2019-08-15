@@ -21,17 +21,26 @@
     <section>
         <div class="section_login">
             <div id="icones" class="icones">
-                <div class="opt_aluno" onclick="javascript: logarAluno();">
-                    <img class="icon_student" src="/static/img/login/student.png" alt="">
-                    <h3>Portal do Aluno</h3>
-                </div>
-                
-                <!-- <div class="borda_login">
-                </div> -->
+                <div class="ar_icones">
+                    <div class="opt_aluno" onclick="javascript: logarAluno();">
+                            <img class="icon_student" src="/static/img/login/student.png" alt="">
+                            <h3>Portal do Aluno</h3>
+                        </div>
+                        
+                        <div class="borda_login"></div>
+                        
+                        <div class="opt_escola" onclick="javascript: logarEscola();">
+                                <img class="icon_school" src="/static/img/login/school.png" alt="">
+                                <h3>Portal da Escola</h3>
+                            </div>
+                        </div>
 
-                <div class="opt_escola" onclick="javascript: logarEscola();">
-                    <img class="icon_school" src="/static/img/login/school.png" alt="">
-                    <h3>Portal da Escola</h3>
+                <div class="ar_erro">
+                    {% for message in messages %}
+                    <div class="alert alert-danger">
+                        <strong>Erro!</strong> {{ message }}
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -44,14 +53,7 @@
                         <input type="text" name="codigoaluno" placeholder="Código de Acesso">
                         <input type="password" name="datanascimento" placeholder="Data de Nascimento">
                     </div>
-                    <div>
-                        {% for message in messages %}
-                        <div class="alert alert-danger">
-                            <strong>Erro!</strong> {{ message }}
-                        </div>
-                        {% endfor %}
-                        <input type="submit" value="LOGIN">
-                    </div>
+                    <input type="submit" value="LOGIN">
                 </form>
             </div>
 
@@ -64,14 +66,7 @@
                         <input type="text" id="username" name="username" placeholder="Código de Acesso">
                         <input type="password" id="password" name="password" placeholder="Senha de Acesso">
                     </div>
-                    <div>
-                        {% for message in messages %}
-                        <div class="alert alert-danger">
-                            <strong>Erro!</strong> {{ message }}
-                        </div>
-                        {% endfor %}
-                        <input type="submit" value="LOGIN">
-                    </div>
+                    <input type="submit" value="LOGIN">
                 </form>
             </div>
 

@@ -40,8 +40,14 @@ section{
 .icones{
     display: flex;
     align-items: center;
+    flex-direction: column;
     position: absolute;
     top: 250px;
+}
+
+.ar_icones{
+    display: flex;
+    flex-direction: row;
 }
 
 .back{
@@ -69,11 +75,11 @@ section{
     cursor: pointer;
 }
 
-/* .borda_login{
+.borda_login{
     width: 0.3px;
     height: 200px;
     border: 1px solid black;
-} */
+}
 
 .opt_escola{
     margin-left: 50px;
