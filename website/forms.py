@@ -1,6 +1,6 @@
 from django import forms
 from .models import Escola, Aluno, Contato
-from website.choices import REDES_ENSINO, TIPOS_ENSINO
+from website.choices import REDES_ENSINO, TIPOS_ENSINO, TURMAS, GENEROS
 
 class CadastroEscola(forms.ModelForm):
     class Meta:
@@ -61,6 +61,39 @@ class CadastroEscola(forms.ModelForm):
                 self.add_error('confirmar_senha', msg)
         return cleaned_data
 
+class CadastroAluno(forms.ModelForm):
+    class Meta:
+        model = Aluno
+        fields = ('nome_aluno', 'sobrenome_aluno', 'nascimento_aluno', 'idade_aluno',
+                  'turma_aluno', 'genero_aluno', 'pontuacao_aluno')
+        widgets = {
+            'nome_aluno': forms.TextInput(attrs={
+                'required': True,
+                'id': 'nome_aluno'}),
+
+            'sobrenome_aluno': forms.TextInput(attrs={
+                'required': True,
+                'id': 'sobrenome_aluno'}),
+
+            'nascimento_aluno': forms.DateInput(attrs={
+                'required': True,
+                'id': 'nascimento_aluno'}),
+
+            'idade_aluno': forms.TextInput(attrs={
+                'required': True,
+                'id': 'idade_aluno'}),
+
+            'turma_aluno': forms.Select(choices=TURMAS, attrs={
+                'required': True,
+                'id': 'turma_aluno'}),
+
+            'genero_aluno': forms.Select(choices=GENEROS, attrs={
+                'required': True,
+                'id': 'genero_aluno'}),
+            
+            'pontuacao_aluno': forms.NumberInput(attrs={
+                'id': 'pontuacao_aluno'}),
+            }
 
 class ContatarPessoas(forms.ModelForm):
     class Meta:
