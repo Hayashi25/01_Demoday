@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CadastroEscola, ContatarPessoas
+from .forms import CadastroEscola, CadastroAluno, ContatarPessoas
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate
@@ -21,14 +21,15 @@ def blog(request):
     context = {}
     return render(request, 'blog.html', context)
 
-def cadastro(request):
+def cadastro_escola(request):
     if request.method == "POST":
         form = CadastroEscola(request.POST)
         if form.is_valid():
             escola = form.save()
-            user = User.objects.create_user(username=request.POST['codigo_acesso'], password=request.POST['senha_acesso'],
+            user = User.objects.create_user(username=request.POST['codigo_acesso'],
+                                            password=request.POST['senha_acesso'],
                                             email=request.POST['email'])
-            return redirect("/")
+            return render(request, 'escola.html')
     else:
         form = CadastroEscola()
     
@@ -37,14 +38,14 @@ def cadastro(request):
     }
     return render(request, 'cadastro.html', context)
 
-def login(request):
+def login_escola(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return redirect ('/')
+            return redirect ("/portaldaescola")
         else:
             messages.error(request, 'Usuário e/ou senha inválido(s). Favor tentar novamente.')
     context = {}
@@ -52,11 +53,21 @@ def login(request):
 
 def logout_user(request):
     logout(request)
-    return redirect ('/login')
+    return redirect('/login')
 
-def aluno(request):
-    context = {}
-    return render(request, 'aluno.html', context)
+def cadastro_aluno(request):
+    if request.method == "POST":
+        form = CadastroAluno(request.POST)
+        if form.is_valid():
+            aluno = form.save()
+            return redirect ("/portaldaescola")
+    else:
+        form = CadastroAluno()
+    
+    context = {
+        'form': form
+        }
+    return render(request, 'escola.html', context)
 
 @login_required(login_url='/login')
 def escola(request):
