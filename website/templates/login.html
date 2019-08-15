@@ -23,17 +23,17 @@
             <div id="icones" class="icones">
                 <div class="ar_icones">
                     <div class="opt_aluno" onclick="javascript: logarAluno();">
-                            <img class="icon_student" src="/static/img/login/student.png" alt="">
-                            <h3>Portal do Aluno</h3>
-                        </div>
+                        <img class="icon_student" src="/static/img/login/student.png" alt="">
+                        <h3>Portal do Aluno</h3>
+                    </div>
                         
-                        <div class="borda_login"></div>
-                        
-                        <div class="opt_escola" onclick="javascript: logarEscola();">
-                                <img class="icon_school" src="/static/img/login/school.png" alt="">
-                                <h3>Portal da Escola</h3>
-                            </div>
-                        </div>
+                    <div class="borda_login"></div>
+                       
+                    <div class="opt_escola" onclick="javascript: logarEscola();">
+                        <img class="icon_school" src="/static/img/login/school.png" alt="">
+                        <h3>Portal da Escola</h3>
+                    </div>
+                </div>
 
                 <div class="ar_erro">
                     {% for message in messages %}
@@ -47,8 +47,8 @@
             <div id="login_aluno">
                 <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.jpg" alt="">
                 <form action="" method="POST">
-                    <img class="pop_upal" src="static/img/login/student.png" alt="">
                     {% csrf_token %}
+                    <img class="pop_upal" src="static/img/login/student.png" alt="">
                     <div class="form_aluno">
                         <input type="text" name="codigoaluno" placeholder="Código de Acesso">
                         <input type="password" name="datanascimento" placeholder="Data de Nascimento">
@@ -60,8 +60,8 @@
             <div id="login_escola">
                 <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.jpg" alt="">
                 <form action="login" method="POST">
-                    <img class="pop_upsc" src="static/img/login/school.png" alt="">
                     {% csrf_token %}
+                    <img class="pop_upsc" src="static/img/login/school.png" alt="">
                     <div class="form_escola">
                         <input type="text" id="username" name="username" placeholder="Código de Acesso">
                         <input type="password" id="password" name="password" placeholder="Senha de Acesso">
