@@ -22,9 +22,11 @@ footer{
 }
 
 h1{
+    color: #3c7c21;
     text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 40px;
-    font-weight: lighter;
+    font-weight: 400;
     margin-top: 25px;
 }
 
@@ -35,7 +37,7 @@ h1{
     height: 100%;
     z-index: 2;
     position: absolute;
-    top: 260px;
+    top: 210px;
     right: 0px;
     left: 0px;
     bottom: 0px;
@@ -49,14 +51,47 @@ h1{
 
 .azul{
     background-color: #5787f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .verde{
     background-color: #bad378;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .vermelho{
     background-color: #ef7874;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add{
+    width: 80px;
+    height: 80px;
+}
+
+.edit{
+    width: 133px;
+    height: 70px;
+}
+
+.star{
+    width: 70px;
+    height: 70px;
+}
+
+.img_header{
+    background-image: url('/static/img/escola/bgescola.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 195px;
+    position: absolute;
+    top: 460px;
 }
 
 .cadastro_aluno{    
