@@ -29,7 +29,7 @@ def cadastro_escola(request):
             user = User.objects.create_user(username=request.POST['codigo_acesso'],
                                             password=request.POST['senha_acesso'],
                                             email=request.POST['email'])
-            return render(request, 'escola.html')
+            return render(request, 'login.html')
     else:
         form = CadastroEscola()
     
