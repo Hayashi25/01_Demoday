@@ -79,7 +79,7 @@ class CadastroAluno(forms.ModelForm):
                 'required': True,
                 'id': 'nascimento_aluno'}),
 
-            'idade_aluno': forms.TextInput(attrs={
+            'idade_aluno': forms.NumberInput(attrs={
                 'required': True,
                 'id': 'idade_aluno'}),
 
