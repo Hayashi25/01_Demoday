@@ -1,5 +1,5 @@
 body{
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Spinnaker', sans-serif;
     display: grid;
     grid-template-areas: 'nav nav nav nav'
                          'section section section section'
@@ -21,12 +21,52 @@ footer{
     grid-area: footer;
 }
 
+.background{
+    height: 85%;
+    width: 100%;
+    background-image: url('/static/img/escola/backgroundescola.jpg');
+    background-size: cover;
+}
+
 h1{
     text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    margin-top: 25px;
+    color: white;
+}
+
+.background h1{
+    margin-top: 0px;
+}
+
+.quadrados{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.quadrado{
+    width: 220px;
+    height: 200px;
+    margin: 10px;
+}
+
+.azul{
+    background-color: #5787f6;
+}
+
+.verde{
+    background-color: #bad378;
+}
+
+.vermelho{
+    background-color: #ef7874;
 }
 
 .cadastro_aluno{    
-    display: flex;
+    display: none;
 }
 
 .cadastro_aluno form{
@@ -48,6 +88,17 @@ h1{
     margin-left: 125px;
     margin-top: 10px;
     width: 140px;
+    background-color: #46a65e;
+    border: none;
+    height: 30px;
+    font-weight: bolder;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.bt_cadal:hover{
+    background-color: #29402f;
 }
 
 label{
@@ -69,6 +120,7 @@ input{
 
 select{
     width: 177px;
+    height: 31px;
 }
 
 #pontuacao_aluno, label[for=pontuacao_aluno]{
