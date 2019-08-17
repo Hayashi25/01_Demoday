@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
 from .forms import CadastroEscola, CadastroAluno, ContatarPessoas
+from .models import Escola, Aluno, Contato
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate
 from django.contrib.auth import login as auth_login
+from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
@@ -55,6 +57,12 @@ def logout_user(request):
     logout(request)
     return redirect('/login')
 
+@login_required(login_url='/login')
+def escola(request):
+    context = {}
+    return render(request, 'escola.html', context)
+
+@login_required(login_url='/login')
 def cadastro_aluno(request):
     if request.method == "POST":
         form = CadastroAluno(request.POST)
@@ -67,12 +75,14 @@ def cadastro_aluno(request):
     context = {
         'form': form
         }
-    return render(request, 'escola.html', context)
+    return render(request, 'regaluno.html', context)
 
-@login_required(login_url='/login')
-def escola(request):
-    context = {}
-    return render(request, 'escola.html', context)
+# def editar_aluno(request, id):
+#     post = get_object_or_404(Post, pk=id)
+#     form = PostForm (instance=post)
+
+#     if(request=)
+
 
 def contato(request):
     if request.method == "GET":

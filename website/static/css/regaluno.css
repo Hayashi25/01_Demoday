@@ -30,60 +30,70 @@ h1{
     margin-top: 25px;
 }
 
-.quadrados{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    height: 100%;
-    z-index: 2;
+.cadastro_aluno form{
     position: absolute;
-    top: 210px;
+    left: 485px;
+    top: 200px;
     right: 0px;
-    left: 0px;
-    bottom: 0px;
+    width: 30%;
 }
 
-.quadrado{
-    width: 220px;
-    height: 200px;
-    margin: 10px;
+.divform{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 7px;
+}
+
+.bt_cadal{
+    margin-left: 125px;
+    margin-top: 10px;
+    width: 140px;
+    background-color: #46a65e;
+    border: none;
+    height: 30px;
+    font-weight: bolder;
+    color: white;
+    font-size: 17px;
     cursor: pointer;
 }
 
-.azul{
-    background-color: #5787f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.bt_cadal:hover{
+    background-color: #29402f;
 }
 
-.verde{
-    background-color: #bad378;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+input:focus{
+    border: solid 2px rgb(139, 218, 22); 
 }
 
-.vermelho{
-    background-color: #ef7874;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+label{
+    font-size: 17px;
+    font-weight: lighter;
+    color: #666666;
 }
 
-.add{
-    width: 80px;
-    height: 80px;
+input, select{
+    border: 2px solid green;
+    border-radius: 8px;
+    height: 25px;
+    padding-left: 5px;
 }
 
-.edit{
-    width: 133px;
-    height: 70px;
+input{
+    width: 170px;
 }
 
-.star{
-    width: 70px;
-    height: 70px;
+input[value=Cadastrar]{
+    border:none;
+}
+
+select{
+    width: 177px;
+    height: 31px;
+}
+
+#pontuacao_aluno, label[for=pontuacao_aluno]{
+    display: none;
 }
 
 .img_header{

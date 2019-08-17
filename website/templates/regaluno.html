@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Spinnaker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/escola.css' %}">
+    <link rel="stylesheet" href="{% static 'css/regaluno.css' %}">
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <title>Portal da Escola</title>
@@ -18,18 +18,20 @@
     {% include 'shared/nav.html' %}
 
     <section>
-        <h1>aqui vai estar escrito painel de controle</h1>
+        <h1>aqui vai estar escrito registro de aluno</h1>
 
-        <div class="quadrados">
-            <a href="/registrodealuno">
-                <div class="quadrado azul"><img class="add" src="/static/img/escola/add.png" alt=""></div>
-            </a>
-            <a href="">
-                <div class="quadrado verde"><img class="edit" src="/static/img/escola/edit.png" alt=""></div>
-            </a>
-            <a href="">
-                <div class="quadrado vermelho"><img class="star" src="/static/img/escola/star.png" alt=""></div>
-            </a>
+        <div class="cadastro_aluno">
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="divform">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+                <input class="bt_cadal" type="submit" value="Cadastrar">
+            </form>
         </div>
 
         <div class="img_header">
