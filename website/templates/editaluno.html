@@ -7,11 +7,17 @@
 {% block conteudo %}
 <h1>aqui vai estar escrito edição de aluno</h1>
 
-<div>
+<div class="edicao_aluno">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="salvar">
+        {% for field in form %}
+        <div class="divedit">
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+        <input class="bt_cadal" type="submit" value="Salvar">
     </form>
 </div>
 

@@ -92,10 +92,8 @@ def cadastro_aluno(request):
 
 @login_required(login_url='/login')
 def edicao_aluno(request, id):
-    print('ALLALALALALAALALALAALALALALA')
     instance = get_object_or_404(Aluno, id=id)
     form = CadastroAluno(instance=instance)
-    print('LALALALAAUQIFOI')
 
     if request.method == 'POST':
         form = CadastroAluno(request.POST, instance=instance)
@@ -109,7 +107,6 @@ def edicao_aluno(request, id):
             instance.turma_aluno = form.cleaned_data['turma_aluno']
             instance.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
             instance.save()
-            print('aqui foi')
             messages.success(request, 'O aluno foi editado.')
             return redirect ("/portaldaescola")
 

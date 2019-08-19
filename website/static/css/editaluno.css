@@ -1,0 +1,14 @@
+.edicao_aluno form{
+    position: absolute;
+    left: 485px;
+    top: 185px;
+    right: 0px;
+    width: 30%;
+}
+
+.divedit{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 8px;
+}
