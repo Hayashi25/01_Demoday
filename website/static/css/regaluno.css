@@ -10,7 +10,7 @@ h1{
 .cadastro_aluno form{
     position: absolute;
     left: 485px;
-    top: 200px;
+    top: 185px;
     right: 0px;
     width: 30%;
 }
@@ -19,7 +19,7 @@ h1{
     display: flex;
     flex-direction: column;
     float: left;
-    margin: 7px;
+    margin: 8px;
 }
 
 .bt_cadal{
@@ -71,4 +71,17 @@ select{
 
 #pontuacao_aluno, label[for=pontuacao_aluno]{
     display: none;
+}
+
+.errorlist{
+    margin: 0px;
+    font-size: 12px;
+    padding: 0px;
+    color: rgb(204, 19, 19);
+    display: flex;
+    list-style: none;
+}
+
+li{
+    position: absolute;
 }

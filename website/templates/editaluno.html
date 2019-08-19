@@ -1,23 +1,23 @@
 {% extends 'shared/layout_escola.html' %}
 
 {% block titulo %}
-<title>Registro de Alunos</title>
+<title>Edição de Aluno</title>
 {% endblock %}
 
 {% block conteudo %}
-<h1>aqui vai estar escrito registro de aluno</h1>
+<h1>aqui vai estar escrito edição de aluno</h1>
 
-<div class="cadastro_aluno">
+<div class="edicao_aluno">
     <form method="POST">
         {% csrf_token %}
         {% for field in form %}
-        <div class="divform">
+        <div class="divedit">
             {{ field.label_tag }}
             {{ field }}
             {{ field.errors }}
         </div>
         {% endfor %}
-        <input class="bt_cadal" type="submit" value="Cadastrar">
+        <input class="bt_cadal" type="submit" value="Salvar">
     </form>
 </div>
 

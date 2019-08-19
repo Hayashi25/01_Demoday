@@ -11,11 +11,19 @@
     <a href="/registrodealuno">
         <div class="quadrado azul"><img class="add" src="/static/img/escola/add.png" alt=""></div>
     </a>
-    <a href="">
+    <a href="/edicaodealuno">
         <div class="quadrado verde"><img class="edit" src="/static/img/escola/edit.png" alt=""></div>
     </a>
-    <a href="">
+    <a href="/pontuacao">
         <div class="quadrado vermelho"><img class="star" src="/static/img/escola/star.png" alt=""></div>
     </a>
+</div>
+
+<div>
+    {% for message in messages %}
+    <div class="alert alert-success">
+        <strong>Sucesso!</strong> {{ message }}
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

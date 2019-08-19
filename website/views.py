@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate
 from django.contrib.auth import login as auth_login
-from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -66,8 +66,21 @@ def escola(request):
 def cadastro_aluno(request):
     if request.method == "POST":
         form = CadastroAluno(request.POST)
+        escola = Escola.objects.filter(email=request.user.email).first()
+        print(request.user.email)
+        print(escola)
         if form.is_valid():
-            aluno = form.save()
+            aluno = Aluno()
+            aluno.nome_aluno = form.cleaned_data['nome_aluno']
+            aluno.sobrenome_aluno = form.cleaned_data['sobrenome_aluno']
+            aluno.nascimento_aluno = form.cleaned_data['nascimento_aluno']
+            aluno.idade_aluno = form.cleaned_data['idade_aluno']
+            aluno.genero_aluno = form.cleaned_data['genero_aluno']
+            aluno.turma_aluno = form.cleaned_data['turma_aluno']
+            aluno.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
+            aluno.escola = escola
+            aluno.save()
+            messages.success(request, 'O aluno foi cadastrado.')
             return redirect ("/portaldaescola")
     else:
         form = CadastroAluno()
@@ -75,14 +88,98 @@ def cadastro_aluno(request):
     context = {
         'form': form
         }
+
     return render(request, 'regaluno.html', context)
 
-# def editar_aluno(request, id):
-#     post = get_object_or_404(Post, pk=id)
-#     form = PostForm (instance=post)
+@login_required(login_url='/login')
+def page_edicao(request):
+    context = {}
+    escola = Escola.objects.filter(email=request.user.email).first()
+    print(request.user.email)
+    print(escola)
+    if request.method == 'POST':
+        turma = request.POST.get('turma_aluno')
+        alunos = Aluno.objects.select_related('escola').filter(turma_aluno=turma, ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
+        context = {'alunos':alunos}
+        print(alunos)
+    return render(request, 'pagedit.html', context)
 
-#     if(request=)
+@login_required(login_url='/login')
+def edicao_aluno(request, id):
+    instance = get_object_or_404(Aluno, id=id)
+    form = CadastroAluno(instance=instance)
 
+    if request.method == 'POST':
+        form = CadastroAluno(request.POST, instance=instance)
+
+        if form.is_valid():
+            instance.nome_aluno = form.cleaned_data['nome_aluno']
+            instance.sobrenome_aluno = form.cleaned_data['sobrenome_aluno']
+            instance.nascimento_aluno = form.cleaned_data['nascimento_aluno']
+            instance.idade_aluno = form.cleaned_data['idade_aluno']
+            instance.genero_aluno = form.cleaned_data['genero_aluno']
+            instance.turma_aluno = form.cleaned_data['turma_aluno']
+            instance.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
+            instance.save()
+            messages.success(request, 'O aluno foi editado.')
+            return redirect ("/portaldaescola")
+
+        elif(request.method == 'GET'):
+            return render(request, 'editaluno.html', {'form':form, 'instance':instance})
+
+        else:
+            return render(request, 'editaluno.html', {'form':form, 'instance':instance})
+
+    return render(request, 'editaluno.html', {'form': form}, {'instance': instance})
+
+@login_required(login_url='/login')
+def remocao_aluno(request, id):
+    aluno = Aluno.objects.filter(id=id).first()
+    if aluno is not None:
+        aluno.ativo = False
+        aluno.save()
+        messages.success(request, 'O aluno foi excluído.')
+        return redirect ("/portaldaescola")
+    return render(request, 'escola.html')
+
+@login_required(login_url='/login')
+def page_pontos(request):
+    context = {}
+    escola = Escola.objects.filter(email=request.user.email).first()
+    if request.method == 'POST':
+        turma = request.POST.get('turma_aluno')
+        alunos = Aluno.objects.select_related('escola').filter(turma_aluno=turma, ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
+        context = {'alunos':alunos}
+        print(alunos)
+    return render(request, 'pagepoint.html', context)
+
+@login_required(login_url='/login')
+def atribuicao_pontos(request, id):
+    instance = get_object_or_404(Aluno, id=id)
+    form = CadastroAluno(instance=instance)
+
+    if request.method == 'POST':
+        form = CadastroAluno(request.POST, instance=instance)
+
+        if form.is_valid():
+            instance.nome_aluno = form.cleaned_data['nome_aluno']
+            instance.sobrenome_aluno = form.cleaned_data['sobrenome_aluno']
+            instance.nascimento_aluno = form.cleaned_data['nascimento_aluno']
+            instance.idade_aluno = form.cleaned_data['idade_aluno']
+            instance.genero_aluno = form.cleaned_data['genero_aluno']
+            instance.turma_aluno = form.cleaned_data['turma_aluno']
+            instance.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
+            instance.save()
+            messages.success(request, 'A pontuação foi atribuída :)')
+            return redirect ("/portaldaescola")
+
+        elif(request.method == 'GET'):
+            return render(request, 'editpoint.html', {'form':form, 'instance':instance})
+
+        else:
+            return render(request, 'editpoint.html', {'form':form, 'instance':instance})
+
+    return render(request, 'editpoint.html', {'form': form}, {'instance': instance})
 
 def contato(request):
     if request.method == "GET":
@@ -106,4 +203,5 @@ def contato(request):
     context = {
         'form': form
     }
+
     return render(request, 'contato.html', context)

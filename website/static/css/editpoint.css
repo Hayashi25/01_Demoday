@@ -1,0 +1,12 @@
+label[for=pontuacao_aluno], #pontuacao_aluno{
+    display: inline-block;
+}
+
+label[for=nome_aluno], #nome_aluno,
+label[for=sobrenome_aluno], #sobrenome_aluno,
+label[for=nascimento_aluno], #nascimento_aluno,
+label[for=idade_aluno], #idade_aluno,
+label[for=turma_aluno], #turma_aluno,
+label[for=genero_aluno], #genero_aluno{
+    display: none;
+}
