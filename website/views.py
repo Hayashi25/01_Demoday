@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate
 from django.contrib.auth import login as auth_login
-from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -101,8 +101,7 @@ def page_edicao(request):
         turma = request.POST.get('turma_aluno')
         alunos = Aluno.objects.select_related('escola').filter(turma_aluno=turma, ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
         context = {'alunos':alunos}
-    # alunos = Aluno.objects.select_related('escola').filter(ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
-    print(alunos)
+        print(alunos)
     return render(request, 'pagedit.html', context)
 
 @login_required(login_url='/login')
@@ -142,6 +141,19 @@ def remocao_aluno(request, id):
         messages.success(request, 'O aluno foi excluído.')
         return redirect ("/portaldaescola")
     return render(request, 'escola.html')
+
+@login_required(login_url='/login')
+def page_pontos(request):
+    context = {}
+    escola = Escola.objects.filter(email=request.user.email).first()
+    if request.method == 'POST':
+        turma = request.POST.get('turma_aluno')
+        alunos = Aluno.objects.select_related('escola').filter(turma_aluno=turma, ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
+        context = {'alunos':alunos}
+        print(alunos)
+    return render(request, 'pagepoint.html', context)
+
+
 
 def contato(request):
     if request.method == "GET":
