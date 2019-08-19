@@ -91,6 +91,16 @@ def cadastro_aluno(request):
     return render(request, 'regaluno.html', context)
 
 @login_required(login_url='/login')
+def page_edicao(request):
+    escola = Escola.objects.filter(email=request.user.email).first()
+    print(request.user.email)
+    print(escola)
+    alunos = Aluno.objects.select_related('escola').filter(escola__in=Escola.objects.filter(email=request.user.email))
+    print(alunos)
+    context = {'alunos':alunos}
+    return render(request, 'pagedit.html', context)
+
+@login_required(login_url='/login')
 def edicao_aluno(request, id):
     instance = get_object_or_404(Aluno, id=id)
     form = CadastroAluno(instance=instance)
@@ -140,4 +150,5 @@ def contato(request):
     context = {
         'form': form
     }
+
     return render(request, 'contato.html', context)

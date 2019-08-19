@@ -1,0 +1,16 @@
+{% extends 'shared/layout_escola.html' %}
+
+{% block titulo %}
+<title>Alunos</title>
+{% endblock %}
+
+{% block conteudo %}
+<h1>aqui vai estar escrito alunos</h1>
+
+<div>
+    {% for aluno in alunos %}
+        <p>{{aluno.nome_aluno}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
