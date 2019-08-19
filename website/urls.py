@@ -22,7 +22,7 @@ urlpatterns = [
     path('portaldaescola', escola),
     path('registrodealuno', cadastro_aluno),
     path('edicaodealuno', page_edicao),
-    path('edicaoaluno/<int:id>', edicao_aluno),
+    path('editaraluno/<int:id>', edicao_aluno),
     path('removeraluno/<int:id>', remocao_aluno),
     path('contato', contato)
 ]

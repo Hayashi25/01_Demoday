@@ -8,11 +8,26 @@
 <h1>aqui vai estar escrito alunos</h1>
 
 <div>
+    <form method="post">
+        {% csrf_token %}
+        <select name="turma_aluno" class="select_turma">
+            <option value="5ª Série">5ª Série</option>
+            <option value="6ª Série">6ª Série</option>
+            <option value="7ª Série">7ª Série</option>
+            <option value="8ª Série">8ª Série</option>
+            <option value="1º Ano">1º Ano</option>
+            <option value="2º Ano">2º Ano</option>
+            <option value="3º Ano">3º Ano</option>
+        </select>
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+
+<div>
     {% for aluno in alunos %}
         <div class="aluno">
-            <p>{{aluno.nome_aluno}}</p>
-            <p>{{aluno.sobrenome_aluno}}</p>
-            <a href="/edicaoaluno/{{aluno.id}}"><input type="button" value="editar"></a>
+            <p>{{aluno.nome_aluno}} {{aluno.sobrenome_aluno}} - {{aluno.turma_aluno}}</p>
+            <a href="/editaraluno/{{aluno.id}}"><input type="button" value="editar"></a>
             <a href="/removeraluno/{{aluno.id}}"><input type="button" value="excluir"></a>
         </div>
         {% endfor %}

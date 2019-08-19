@@ -88,16 +88,21 @@ def cadastro_aluno(request):
     context = {
         'form': form
         }
+
     return render(request, 'regaluno.html', context)
 
 @login_required(login_url='/login')
 def page_edicao(request):
+    context = {}
     escola = Escola.objects.filter(email=request.user.email).first()
     print(request.user.email)
     print(escola)
-    alunos = Aluno.objects.select_related('escola').filter(ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
+    if request.method == 'POST':
+        turma = request.POST.get('turma_aluno')
+        alunos = Aluno.objects.select_related('escola').filter(turma_aluno=turma, ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
+        context = {'alunos':alunos}
+    # alunos = Aluno.objects.select_related('escola').filter(ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
     print(alunos)
-    context = {'alunos':alunos}
     return render(request, 'pagedit.html', context)
 
 @login_required(login_url='/login')
