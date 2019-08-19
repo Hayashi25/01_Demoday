@@ -66,8 +66,21 @@ def escola(request):
 def cadastro_aluno(request):
     if request.method == "POST":
         form = CadastroAluno(request.POST)
+        escola = Escola.objects.filter(email=request.user.email).first()
+        print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+        print(request.user.email)
+        print(escola)
         if form.is_valid():
-            aluno = form.save()
+            aluno = Aluno()
+            aluno.nome_aluno = form.cleaned_data['nome_aluno']
+            aluno.sobrenome_aluno = form.cleaned_data['sobrenome_aluno']
+            aluno.nascimento_aluno = form.cleaned_data['nascimento_aluno']
+            aluno.idade_aluno = form.cleaned_data['idade_aluno']
+            aluno.genero_aluno = form.cleaned_data['genero_aluno']
+            aluno.turma_aluno = form.cleaned_data['turma_aluno']
+            aluno.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
+            aluno.escola = escola
+            aluno.save()
             return redirect ("/portaldaescola")
     else:
         form = CadastroAluno()
@@ -76,6 +89,10 @@ def cadastro_aluno(request):
         'form': form
         }
     return render(request, 'regaluno.html', context)
+
+def edicao_aluno(request):
+    context = {}
+    return render(request, 'editaluno.html', context)
 
 # def editar_aluno(request, id):
 #     post = get_object_or_404(Post, pk=id)

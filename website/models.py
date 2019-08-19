@@ -63,7 +63,7 @@ class Escola(models.Model):
         return self.nome_escola + ' - ' + self.rede_ensino
 
 class Aluno(models.Model):
-    escola = models.ForeignKey(Escola, on_delete=models.CASCADE, null=True, default='')
+    escola = models.ForeignKey(Escola, on_delete=models.CASCADE, null=True)
 
     nome_aluno = models.CharField(
         max_length=255,

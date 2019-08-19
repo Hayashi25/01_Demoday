@@ -3,6 +3,7 @@ from website.views import index
 from website.views import loja
 from website.views import blog
 from website.views import cadastro_escola
+from website.views import edicao_aluno
 from website.views import login_escola
 from website.views import logout_user
 from website.views import escola
@@ -18,5 +19,6 @@ urlpatterns = [
     path('logout', logout_user),
     path('portaldaescola', escola),
     path('registrodealuno', cadastro_aluno),
+    path('edicaoaluno', edicao_aluno),
     path('contato', contato)
 ]
