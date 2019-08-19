@@ -9,8 +9,13 @@
 
 <div>
     {% for aluno in alunos %}
-        <p>{{aluno.nome_aluno}}</p>
-    {% endfor %}
+        <div class="aluno">
+            <p>{{aluno.nome_aluno}}</p>
+            <p>{{aluno.sobrenome_aluno}}</p>
+            <a href="/edicaoaluno/{{aluno.id}}"><input type="button" value="editar"></a>
+            <a href="/removeraluno/{{aluno.id}}"><input type="button" value="excluir"></a>
+        </div>
+        {% endfor %}
 </div>
 
 {% endblock %}

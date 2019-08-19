@@ -95,7 +95,7 @@ def page_edicao(request):
     escola = Escola.objects.filter(email=request.user.email).first()
     print(request.user.email)
     print(escola)
-    alunos = Aluno.objects.select_related('escola').filter(escola__in=Escola.objects.filter(email=request.user.email))
+    alunos = Aluno.objects.select_related('escola').filter(ativo=True, escola__in=Escola.objects.filter(email=request.user.email))
     print(alunos)
     context = {'alunos':alunos}
     return render(request, 'pagedit.html', context)
@@ -127,6 +127,16 @@ def edicao_aluno(request, id):
             return render(request, 'editaluno.html', {'form':form, 'instance':instance})
 
     return render(request, 'editaluno.html', {'form': form}, {'instance': instance})
+
+@login_required(login_url='/login')
+def remocao_aluno(request, id):
+    aluno = Aluno.objects.filter(id=id).first()
+    if aluno is not None:
+        aluno.ativo = False
+        aluno.save()
+        messages.success(request, 'O aluno foi excluído.')
+        return redirect ("/portaldaescola")
+    return render(request, 'escola.html')
 
 def contato(request):
     if request.method == "GET":
