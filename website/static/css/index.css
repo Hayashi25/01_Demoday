@@ -1,4 +1,4 @@
-body{
+/* body{
     display: grid;
     grid-template-areas: 'carrossel carrossel carrossel carrossel'
         'dados dados dados dados'
@@ -58,7 +58,7 @@ left: auto;
    transition-delay: 0.2s;
    cursor: pointer;
 } */
-
+/* 
 .dados{
     background-color: rgb(31, 42, 140);
     grid-area: dados;
@@ -66,7 +66,7 @@ left: auto;
 
 .steps{
     /* background-color: #F2DA5E; */
-    grid-area: steps;
+    /* grid-area: steps;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,4 +79,155 @@ left: auto;
 .steps div img{
     height: 80px;
     width: 80px;
+}  */
+
+
+/* ESTRUTURAR O CARROSSEL  */
+#carrossel{
+    grid-area: carrossel;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: carrossel;
+}
+
+#slide_caixa{
+    height: 100%;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+    background-size: cover;
+}
+
+#carrossel div{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+.geometrica{
+    border-top: 100px solid transparent;
+    border-right-width: 1500px; 
+    border-right-style: solid; 
+    border-right-color: #fdfdfd;
+}
+
+#carrossel img{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+}
+
+.sombra{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    background: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+/* CRIAR CAIXA DE IMAGEM COM DESCRCAO EMBAIXO, SEDUNDA SECTION */
+.dados {
+    background-color: #fdfdfd;
+    grid-area: dados;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.imgFazemos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.imgFazemos div{
+    padding: 50px;
+}
+
+/* ESTILIZAR TITULO DA PRIMEIRA SECTION */
+.titulo_fonte{
+    position: absolute;
+    top: 680px;
+    left:160px;
+    width: 150px;
+    letter-spacing: 0.1em;
+    font-size:30px;
+    font-weight: bold;
+}
+
+.base_fonte{
+    color: #3C7c21;
+    font-weight: bolder;
+    font-size:40px;
+    padding: 0px;
+}
+
+/* CRIAR LINKS NA TERCEIRA SECTION */
+.steps{
+    /* background-color: #F2DA5E; */
+    grid-area: steps;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #319ac7;
+}
+
+.steps h3{
+    padding-bottom: 30px;
+}
+
+.steps div{
+    padding: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.steps div a{
+    /* background-color: #9bd21f; */
+    background-image: url("{% static 'img/index/fundo_steps.png' %}");
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    align-items: flex-end; 
+}
+.steps div span{
+    padding:20px;
+}
+
+.steps div a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #e97926;
+}
+
+.nav_help{
+    word-spacing: 5x;
+}
+
+.steps div img{
+    height: 95px;
+    width: 95px;
+}
+
+/* ESTILIZAR TITULO DA SEGUNDA SECTION */
+.titulo_section2{
+    position: absolute;
+    top:1270px;
+    left:160px;
+    width: 150px;
+    letter-spacing: 0.15em;
+    font-size:30px;
+    font-weight: bold;
+    margin-left: 0px;
 }
