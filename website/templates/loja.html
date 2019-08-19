@@ -1,1 +1,80 @@
-<h1>LOJA</h1>
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Spinnaker&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="{% static 'js/loja.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'css/loja.css' %}">
+    <title>Lojinha</title>
+</head>
+
+<body>
+    {% include 'shared/nav.html' %}
+    <!-- INICIAR LOJINHA -->
+    <div class="titulo">
+        <h2>Descubra quanto vele seus itens</h2>
+    </div>
+    <div class="itens">
+        <div class="fileira">
+            <div href="#">
+                <p>link 1</p>
+                <img src="static/img/loja/brinquedo1.jpg" alt="">
+            </div>
+            <div href="#">
+                <p>link 2</p>
+                <img src="static/img/loja/brinquedo2.jpg" alt="">
+            </div>
+            <div href="#">
+                <p>link 3</p>
+                <img src="static/img/loja/brinquedo3.jpg" alt="">
+            </div>
+        </div>
+        <div class="fileira">
+            <div>
+                <p>link 1</p>
+                <img src="static/img/loja/brinquedo4.jpg" alt="">
+            </div>
+            <div href="#">
+                <p>link 2</p>
+                <img src="static/img/loja/brinquedo5.jpg" alt="">
+            </div>
+            <div href="#">
+                <p>link 3</p>
+                <img src="static/img/loja/brinquedo6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="botao_loja">
+        <h3>Itens de Troca</h3>
+        <div class="papel">
+            <img src="static/img/loja/papel.png" alt="" srcset="">
+
+        </div>
+        <div class="plastico">
+            <img src="static/img/loja/plastico.png" alt="" srcset="">
+        </div>
+        <div class="metal">
+            <img src="static/img/loja/metal.png" alt="" srcset="">
+        </div>
+        <div class="vidro">
+            <img src="static/img/loja/vidro.png" alt="" srcset="">
+        </div>
+    </div>
+    <span id="materialPlastico">
+        <div class="centro">
+            <div>
+                <img src="static/img/loja/p.png" alt="" srcset="">
+                <p>dngjksdhngjusdn</p>
+            </div>
+        </div>
+    </span>
+    {% include 'shared/footer.html' %}
+
+</body>
+
+</html>
