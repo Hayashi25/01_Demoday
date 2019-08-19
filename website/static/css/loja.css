@@ -1,0 +1,110 @@
+
+/* ESTILIZAR LOJINHA */
+
+body{
+    display: grid;
+    grid-template-areas: 'titulo titulo '
+                        ' botao_loja itens '
+                        'botao_loja itens '
+                        'botao_loja itens ';
+    grid-template-columns: 23vw 75.6vw;
+    grid-template-rows: 30vh 55vh 55vh 55vh;
+   
+}
+
+.titulo{
+    grid-area: titulo;
+    background-color: #319ac7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("img/fundo_lol.png");
+}
+
+.botao_loja{
+    grid-area: botao_loja;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: rgb(42, 125, 165); */
+    background-color: #209d73;
+    border-top: 10px solid  #f4d762;
+ 
+}
+.botao_loja div{
+    padding: 30px;
+}
+
+.botao_loja div img{
+    background-color: #fdfdfd;
+    height: 140px;
+    width: 150px;
+    border: #319ac7 10px solid;
+    border-radius: 45px;
+}
+
+.itens{
+    grid-area: itens;
+    border-top: 10px solid  #f4d762;
+    padding-top: 60px;
+}
+
+.fileira{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fileira div{
+    border: #209d73 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-decoration: none;
+    font-size: 25px;
+    color: #209d73;
+}
+
+.fileira div:hover{
+    background-color: #209d7356;
+}
+
+.fileira{
+    padding: 10px;
+}
+.fileira div p{
+    border-top: #0e1214 1px solid;
+    padding-top: 10px;
+}
+
+.fileira div img {
+    border-radius: 10px;
+    height: 95px;
+    width: 95px;
+}
+
+#materialPlastico{
+    display: none;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    height: 195%;
+    background: rgba(0, 0, 0, 0.349);
+}
+.centro{
+    padding: 200px;
+    padding-left: 500px;
+    position: fixed;
+}
+.centro div{
+    background-color: #fdfdfd;
+    padding: 80px;
+    padding-left: 90px;
+    padding-right: 90px;
+    border-radius: 10px;
+}
