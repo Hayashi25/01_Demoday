@@ -67,7 +67,6 @@ def cadastro_aluno(request):
     if request.method == "POST":
         form = CadastroAluno(request.POST)
         escola = Escola.objects.filter(email=request.user.email).first()
-        print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
         print(request.user.email)
         print(escola)
         if form.is_valid():
@@ -81,6 +80,7 @@ def cadastro_aluno(request):
             aluno.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
             aluno.escola = escola
             aluno.save()
+            messages.success(request, 'O aluno foi cadastrado.')
             return redirect ("/portaldaescola")
     else:
         form = CadastroAluno()
@@ -90,16 +90,36 @@ def cadastro_aluno(request):
         }
     return render(request, 'regaluno.html', context)
 
-def edicao_aluno(request):
-    context = {}
-    return render(request, 'editaluno.html', context)
+@login_required(login_url='/login')
+def edicao_aluno(request, id):
+    print('ALLALALALALAALALALAALALALALA')
+    instance = get_object_or_404(Aluno, id=id)
+    form = CadastroAluno(instance=instance)
+    print('LALALALAAUQIFOI')
 
-# def editar_aluno(request, id):
-#     post = get_object_or_404(Post, pk=id)
-#     form = PostForm (instance=post)
+    if request.method == 'POST':
+        form = CadastroAluno(request.POST, instance=instance)
 
-#     if(request=)
+        if form.is_valid():
+            instance.nome_aluno = form.cleaned_data['nome_aluno']
+            instance.sobrenome_aluno = form.cleaned_data['sobrenome_aluno']
+            instance.nascimento_aluno = form.cleaned_data['nascimento_aluno']
+            instance.idade_aluno = form.cleaned_data['idade_aluno']
+            instance.genero_aluno = form.cleaned_data['genero_aluno']
+            instance.turma_aluno = form.cleaned_data['turma_aluno']
+            instance.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
+            instance.save()
+            print('aqui foi')
+            messages.success(request, 'O aluno foi editado.')
+            return redirect ("/portaldaescola")
 
+        elif(request.method == 'GET'):
+            return render(request, 'editaluno.html', {'form':form, 'instance':instance})
+
+        else:
+            return render(request, 'editaluno.html', {'form':form, 'instance':instance})
+
+    return render(request, 'editaluno.html', {'form': form}, {'instance': instance})
 
 def contato(request):
     if request.method == "GET":

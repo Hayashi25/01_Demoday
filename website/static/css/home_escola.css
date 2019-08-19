@@ -62,3 +62,20 @@ h1{
     width: 70px;
     height: 70px;
 }
+
+.alert-success{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert{
+    position: relative;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: .25rem;
+}

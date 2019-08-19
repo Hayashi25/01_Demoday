@@ -20,7 +20,7 @@ section{
 footer{
     grid-area: footer;
 }
-
+/* 
 .img_header{
     background-image: url('/static/img/escola/bgescola.jpg');
     background-size: cover;
@@ -28,4 +28,4 @@ footer{
     height: 195px;
     position: absolute;
     top: 460px;
-}
+} */

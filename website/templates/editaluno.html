@@ -7,7 +7,12 @@
 {% block conteudo %}
 <h1>aqui vai estar escrito edição de aluno</h1>
 
-<div class="quadrados">
-    <h1>TESTE</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="salvar">
+    </form>
 </div>
+
 {% endblock %}

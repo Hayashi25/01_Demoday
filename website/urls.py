@@ -19,6 +19,6 @@ urlpatterns = [
     path('logout', logout_user),
     path('portaldaescola', escola),
     path('registrodealuno', cadastro_aluno),
-    path('edicaoaluno', edicao_aluno),
+    path('edicaoaluno/<int:id>', edicao_aluno),
     path('contato', contato)
 ]

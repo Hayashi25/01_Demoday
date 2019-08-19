@@ -18,4 +18,12 @@
         <div class="quadrado vermelho"><img class="star" src="/static/img/escola/star.png" alt=""></div>
     </a>
 </div>
+
+<div>
+    {% for message in messages %}
+    <div class="alert alert-success">
+        <strong>Sucesso!</strong> {{ message }}
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
