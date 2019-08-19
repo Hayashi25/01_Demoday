@@ -27,6 +27,7 @@
     {% for aluno in alunos %}
     <div class="aluno">
         <p>{{aluno.nome_aluno}} {{aluno.sobrenome_aluno}} - {{aluno.turma_aluno}}</p>
+        <a href="/atribuirpontos/{{aluno.id}}">pontos</a>
     </div>
     {% endfor %}
 </div>

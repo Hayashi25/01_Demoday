@@ -153,7 +153,33 @@ def page_pontos(request):
         print(alunos)
     return render(request, 'pagepoint.html', context)
 
+@login_required(login_url='/login')
+def atribuicao_pontos(request, id):
+    instance = get_object_or_404(Aluno, id=id)
+    form = CadastroAluno(instance=instance)
 
+    if request.method == 'POST':
+        form = CadastroAluno(request.POST, instance=instance)
+
+        if form.is_valid():
+            instance.nome_aluno = form.cleaned_data['nome_aluno']
+            instance.sobrenome_aluno = form.cleaned_data['sobrenome_aluno']
+            instance.nascimento_aluno = form.cleaned_data['nascimento_aluno']
+            instance.idade_aluno = form.cleaned_data['idade_aluno']
+            instance.genero_aluno = form.cleaned_data['genero_aluno']
+            instance.turma_aluno = form.cleaned_data['turma_aluno']
+            instance.pontuacao_aluno = form.cleaned_data['pontuacao_aluno']
+            instance.save()
+            messages.success(request, 'A pontuação foi atribuída :)')
+            return redirect ("/portaldaescola")
+
+        elif(request.method == 'GET'):
+            return render(request, 'editpoint.html', {'form':form, 'instance':instance})
+
+        else:
+            return render(request, 'editpoint.html', {'form':form, 'instance':instance})
+
+    return render(request, 'editpoint.html', {'form': form}, {'instance': instance})
 
 def contato(request):
     if request.method == "GET":

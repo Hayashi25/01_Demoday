@@ -11,6 +11,7 @@ from website.views import page_edicao
 from website.views import edicao_aluno
 from website.views import remocao_aluno
 from website.views import page_pontos
+from website.views import atribuicao_pontos
 from website.views import contato
 
 urlpatterns = [
@@ -25,6 +26,7 @@ urlpatterns = [
     path('edicaodealuno', page_edicao),
     path('editaraluno/<int:id>', edicao_aluno),
     path('removeraluno/<int:id>', remocao_aluno),
-    path('atribuirpontos', page_pontos),
+    path('pontuacao', page_pontos),
+    path('atribuirpontos/<int:id>', atribuicao_pontos),
     path('contato', contato)
 ]
