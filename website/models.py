@@ -56,7 +56,7 @@ class Escola(models.Model):
         verbose_name='Confirme a senha de acesso',
     )
 
-    data_requisicao = models.DateTimeField(auto_now_add=True)
+    data_requisicao = models.DateTimeField('Data de requisição', auto_now_add=True)
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
@@ -99,8 +99,8 @@ class Aluno(models.Model):
         default=0
     )
 
-    data_criacao = models.DateTimeField(auto_now_add=True)
-    data_atualização = models.DateTimeField(auto_now=True)
+    data_criacao = models.DateTimeField('Data de criação', auto_now_add=True)
+    data_atualizacao = models.DateTimeField('Data de atualização', auto_now=True)
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
@@ -122,8 +122,7 @@ class Contato(models.Model):
         verbose_name='Mensagem'
     )
 
-    data_mensagem = models.DateTimeField('Data',
-    auto_now_add=True)
+    data_mensagem = models.DateTimeField('Data', auto_now_add=True)
 
     def __str__(self):
         return self.subject + ' - ' + self.from_email
