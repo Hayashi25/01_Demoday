@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <script defer src="{% static 'js/index.js' %}"></script>
+    <script defer src="{% static 'js/nav.js' %}"></script>
     <title>Projeto Formiguinha</title>
 </head>
 
@@ -19,7 +20,7 @@
     {% include 'shared/nav.html' %}
 
     <!-- CRIAR SESSÃO PARA O CARROSSEL -->
-    <section id="carrossel">
+    <section id="carrossel" class="medida_carrossel">
         <div class="sombra">
             <div class="geometrica"></div>
             <!--<img src="img/formiiga.png" alt="" > -->
