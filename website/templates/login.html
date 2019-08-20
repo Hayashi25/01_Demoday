@@ -37,9 +37,15 @@
 
                 <div class="ar_erro">
                     {% for message in messages %}
-                    <div class="alert alert-danger">
-                        <strong>Erro!</strong> {{ message }}
-                    </div>
+                        {% if message.tags == 'error'%}
+                        <div class="alert alert-danger">
+                            <strong>Erro!</strong> {{ message }}
+                        </div>
+                        {% elif message.tags == 'success'%}
+                        <div class="alert alert-danger">
+                            <strong>Sucesso!</strong> {{ message }}
+                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>

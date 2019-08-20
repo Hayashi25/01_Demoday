@@ -9,7 +9,7 @@ class Escola(models.Model):
         max_length=255,
         verbose_name='Nome da Escola',
         unique=True,
-        error_messages={'unique': 'Escola com este nome já está cadastrado em nosso sistema.'}
+        error_messages={'unique': 'Já existe!'}
     )
 
     endereco_escola = models.CharField(
@@ -26,7 +26,7 @@ class Escola(models.Model):
         max_length=255, 
         verbose_name='Email', 
         unique=True,
-        error_messages={'unique': 'Este e-mail já está cadastrado em nosso sistema.'}
+        error_messages={'unique': 'Já existe!'}
     )
 
     rede_ensino = models.CharField(
