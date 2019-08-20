@@ -1,59 +1,5 @@
-body{
-    margin: 0px;
-}
-
-#menu_login{
-    align-items: center;
-    background-color: #3c7c21;
-    display: flex;
-    position: fixed;
-    font-family: 'Spinnaker', sans-serif;
-    transition: .7s;
-    width: 100%;
-    height: 10%;
-    font-size: 14px;
-} 
-
-#menu_logout{
-    align-items: center;
-    background-color: #3c7c21;
-    display: flex;
-    position: fixed;
-    font-family: 'Spinnaker', sans-serif;
-    transition: .7s;
-    width: 100%;
-    height: 10%;
-    font-size: 14px;
-}
-
-.menu_esquerdo{
-    display: flex;
-    align-items: center;
-    margin-left: 15px;
-}
-
-#menu_login .menu_direito{
-    position: relative;
-    left: 700px;
-}
-
-#menu_logout .menu_direito{
-    position: relative;
-    left: 725px;
-}
-
-a{
-    padding: 10px;
-    text-decoration: none;
-    font-size: 20px;
-    align-items: flex-start;
-    color: white;
-    font-family: 'Spinnaker', sans-serif;
-} */
-
-
 /* ESTILIZAR MENU */
-#menu{
+.menu{
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -105,15 +51,3 @@ a{
     border-radius: 20px;
     font-size: 18px;
 }
-
-.geometrica{
-    border-top: 100px solid transparent;
-    border-right-width: 1500px; 
-    border-right-style: solid; 
-    border-right-color: #fdfdfd;
-}
-/* 
-.logo_tamanho{
-    width: 80px;
-    height: 69.188px;
-} */

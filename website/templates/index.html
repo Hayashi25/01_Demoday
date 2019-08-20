@@ -11,62 +11,63 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <script defer src="{% static 'js/index.js' %}"></script>
-    <script defer src="{% static 'js/nav.js' %}"></script>
+    <script defer src="{% static 'js/layout.js' %}"></script>
     <title>Projeto Formiguinha</title>
 </head>
 
 <body>
     {% include 'shared/nav.html' %}
 
-    <!-- CRIAR SESSÃO PARA O CARROSSEL -->
-    <section id="carrossel" class="medida_carrossel">
-        <div class="sombra">
-            <div class="geometrica"></div>
-            <!--<img src="img/formiiga.png" alt="" > -->
-        </div>
-    </section>
+ <!-- CRIAR SESSÃO PARA O CARROSSEL -->
+ <section  id="carrossel">
+    <div class="sombra">
+        <div class="geometrica"></div>
+        <img src="static/img/index/formiiga.png" alt="" >
+    </div>
+</section>
 
-    <!-- CRIAR SESSÃO DADOS ESTATISTICO -SECTION 1 -->
+<!-- CRIAR SESSÃO DADOS ESTATISTICO -SECTION 1 -->
 
-    <section class="dados">
-        <h2 class=titulo_fonte> <span class=base_fonte> PORQUE </span> FAZEMOS</h2>
-        <div class="imgFazemos">
-            <div>
-                <img src="static/img/index/passos.png" alt="">
-
-            </div>
-            <div>
-                <img src="static/img/index/passos.png" alt="">
-
-            </div>
-            <div>
-                <img src="static/img/index/passos.png" alt="">
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CRIAR SESSÃO DE COMO FUNCIONA O PROJETO -->
-    <section class="steps">
-        <h2 class=titulo_section2> <span class=base_fonte>COMO </span> FAZEMOS</h2>
+<section class="dados">
+    <span class=base_fonte> PORQUE </span>
+    <span class=base_f>FAZEMOS</span>
+    <div class="imgFazemos">
         <div>
-            <a href="#">
-                <p>link 1</p>
-                <img src="static/img/index/step.png" alt="">
-            </a>
-            <span>----</span>
-            <a href="#">
-                <p>link 2</p>
-                <img src="static/img/index/step.png" alt="">
-            </a>
-            <span>----</span>
-            <a href="#">
-                <p>link 3</p>
-                <img src="static/img/index/step.png" alt="">
-            </a>
+            <img src="static/img/index/passos.png" alt="">
+            
         </div>
-    </section>
+        <div>
+            <img src="static/img/index/passos.png" alt="">
+            
+        </div>
+        <div>
+            <img src="static/img/index/passos.png" alt="">
+            
+        </div>
+    </div>
+</section>
+
+<!-- CRIAR SESSÃO DE COMO FUNCIONA O PROJETO -->
+<section class="steps">
+    <span class=base_fonte> COMO </span>
+    <span class=base_f>FAZEMOS</span>
+    <div>
+        <a class="a_steps" href="#">
+            <p>link 1</p>
+            <img src="static/img/index/step.png" alt="">
+        </a>
+        <span>----</span>
+        <a href="#">
+            <p>link 2</p>
+            <img src="static/img/index/step.png" alt="">
+        </a>
+        <span>----</span>
+        <a href="#">
+            <p>link 3</p>
+            <img src="static/img/index/step.png" alt="">
+        </a>
+    </div>
+</section>
 
     {% include 'shared/footer.html' %}
 </body>
