@@ -20,7 +20,7 @@ body{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(50, 112, 53, 0.900);
+    background-color: rgba(50, 112, 53, 0);
     align-items: center;
     position: fixed;
     font-family: 'Spinnaker', sans-serif;

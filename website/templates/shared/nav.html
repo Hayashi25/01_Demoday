@@ -1,30 +1,22 @@
 {% if user.is_authenticated %}
 <nav id="menu_logout">
-    <a href="/"><img src="/static/img/nav/formiga_logo.png" alt=""></a>
-    <div class="menu_esquerdo">
-        <a href="/loja">Loja</a>
-        <a href="">Explore</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="/contato">Contato</a>
-        <a href="/cadastro">Escola</a>
-    </div>
-    <div class="menu_direito">
-        <a href="/logout">Sair</a>
+    <a class="a_logo" href="/"><img class="logo" src="static/img/nav/projeto-formiguinha.png" alt=""></a>
+    <div class="menu">
+        <a href="/loja">LOJA</a>
+        <a href="">EXPLORE</a>
+        <a href="/portaldaescola">PORTAL DA ESCOLA</a>
+        <a href="/logout">LOGOUT</a>
     </div>
 </nav>
 
 {% else %}
 <nav id="menu_login">
-    <a href="/"><img src="/static/img/nav/formiga_logo.png" alt=""></a>
-    <div class="menu_esquerdo">
-        <a href="/loja">Loja</a>
-        <a href="">Explore</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="/contato">Contato</a>
-        <a href="/cadastro">Escola</a>
-    </div>
-    <div class="menu_direito">
-        <a href="/login">Entrar</a>
+    <a class="a_logo" href="/"><img class="logo" src="static/img/nav/projeto-formiguinha.png" alt=""></a>
+    <div class="menu">
+        <a href="/loja">LOJA</a>
+        <a href="">EXPLORE</a>
+        <a href="/cadastro">CADASTRO</a>
+        <a href="/login">LOGIN</a>
     </div>
 </nav>
 {% endif %}
