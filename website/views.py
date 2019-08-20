@@ -50,7 +50,7 @@ def login_escola(request):
             auth_login(request, user)
             return redirect ("/portaldaescola")
         else:
-            messages.error(request, 'Usuário e/ou senha inválido(s). Favor tentar novamente.')
+            messages.error(request, 'Usuário e/ou senha inválido(s).')
     context = {}
     return render(request, 'login.html', context)
 
