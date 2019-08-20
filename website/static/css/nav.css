@@ -1,4 +1,4 @@
-/* body{
+body{
     margin: 0px;
 }
 
@@ -12,7 +12,7 @@
     width: 100%;
     height: 10%;
     font-size: 14px;
-}
+} 
 
 #menu_logout{
     align-items: center;
@@ -105,3 +105,15 @@ a{
     border-radius: 20px;
     font-size: 18px;
 }
+
+.geometrica{
+    border-top: 100px solid transparent;
+    border-right-width: 1500px; 
+    border-right-style: solid; 
+    border-right-color: #fdfdfd;
+}
+/* 
+.logo_tamanho{
+    width: 80px;
+    height: 69.188px;
+} */
