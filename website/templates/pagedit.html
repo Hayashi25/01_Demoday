@@ -5,30 +5,33 @@
 {% endblock %}
 
 {% block conteudo %}
-<h1>aqui vai estar escrito alunos</h1>
-
-<div>
-    <form method="post">
-        {% csrf_token %}
-        <select name="turma_aluno" class="select_turma">
-            <option value="5ª Série">5ª Série</option>
-            <option value="6ª Série">6ª Série</option>
-            <option value="7ª Série">7ª Série</option>
-            <option value="8ª Série">8ª Série</option>
-            <option value="1º Ano">1º Ano</option>
-            <option value="2º Ano">2º Ano</option>
-            <option value="3º Ano">3º Ano</option>
-        </select>
-        <input type="submit" value="Buscar">
-    </form>
+<div class="hd_pagedit">
+    <img class="img_pagedit" src="/static/img/escola/buscadealunos.png" alt="">
+    
+    <div>
+        <form class="buscador" method="post">
+            {% csrf_token %}
+            <select name="turma_aluno" class="select_turma">
+                <option value="5ª Série">5ª Série</option>
+                <option value="6ª Série">6ª Série</option>
+                <option value="7ª Série">7ª Série</option>
+                <option value="8ª Série">8ª Série</option>
+                <option value="1º Ano">1º Ano</option>
+                <option value="2º Ano">2º Ano</option>
+                <option value="3º Ano">3º Ano</option>
+            </select>
+            <input class="buscar_aluno" type="submit" value="Buscar">
+        </form>
+    </div>
 </div>
 
-<div>
+<div class="alunos">
     {% for aluno in alunos %}
         <div class="aluno">
-            <p>{{aluno.nome_aluno}} {{aluno.sobrenome_aluno}} - {{aluno.turma_aluno}}</p>
-            <a href="/editaraluno/{{aluno.id}}"><input type="button" value="editar"></a>
-            <a href="/removeraluno/{{aluno.id}}"><input type="button" value="excluir"></a>
+            <p>{{aluno.nome_aluno}} {{aluno.sobrenome_aluno}}</p>
+            <p class="dt_time">Última modificação: {{aluno.data_atualizacao}}</p>
+            <a class="a_aluno" href="/editaraluno/{{aluno.id}}"><img class="lp_aluno" src="/static/img/escola/edit_b.png" alt=""></a>
+            <a class="a_aluno" href="/removeraluno/{{aluno.id}}"><img class="lix_aluno" src="/static/img/escola/lixeira.png" alt=""></a>
         </div>
         {% endfor %}
 </div>

@@ -47,6 +47,7 @@
                         </div>
                         {% elif message.tags == 'success'%}
                         <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>                            
                             <strong>Sucesso!</strong> {{ message }}
                         </div>
                         {% endif %}

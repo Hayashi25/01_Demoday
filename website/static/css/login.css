@@ -51,15 +51,16 @@ section{
     position: absolute;
     cursor: pointer;
     top: -100px;
-    left: 485px;
+    left: 120%;
 }
 
 #login_escola, #login_aluno{
     position: absolute;
+    right: 490px;
     height: 117.833px;
     width: 383.1px;
     margin-top: 115px;
-    margin-right: 75px;
+    margin-right: 0px;
     display: flex;
     justify-content: center;
     flex-direction: column;
