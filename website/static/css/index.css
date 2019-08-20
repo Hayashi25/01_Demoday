@@ -106,12 +106,12 @@ left: auto;
     flex-wrap: nowrap;
     align-items: flex-end;
 }
-.geometrica{
+/* .geometrica{
     border-top: 100px solid transparent;
     border-right-width: 1500px; 
     border-right-style: solid; 
     border-right-color: #fdfdfd;
-}
+} */
 
 #carrossel img{
     position: absolute;
@@ -230,4 +230,9 @@ left: auto;
     font-size:30px;
     font-weight: bold;
     margin-left: 0px;
+}
+
+.medida_carrossel{
+    height: 625px;
+    width: 1348.230px;
 }
