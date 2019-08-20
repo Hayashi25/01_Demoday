@@ -1,18 +1,18 @@
 footer{
-    background-color: rgb(1, 2, 1);
+    background-color: #0e1214;
     grid-area: footer;
     height: 370px;
 }
 
 .navbar_ref{
-    margin-left: 30px;
+    margin-left: 5px;
     margin-right: 30px;
 }
 
 .contato-nav{
     position: relative;
     top: -12px;
-    left: 20px;
+    left: 60px;
     font-family: 'Spinnaker', sans-serif;
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -25,9 +25,9 @@ footer{
     color: #ffffff;
     position: relative;
     top: -15px;
-    left: 310px;
+    left: 400px;
     font-family: 'Spinnaker', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: none;
     padding: 10px;
     margin: 0px;
@@ -39,20 +39,20 @@ footer{
     padding: 10px;
     color: #ffffff;
     font-family: 'Spinnaker', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: none;
     align-items: flex-start;
     margin: 0px;
 }
 
 .missao{
-    color: #3C7c21;
+    color: #327035;
     font-weight: bold;
 }
 
 .ladoesquerdo{
     position: relative;
-    left: 30px;
+    left: -255px;
 }
 
 .parteners{
@@ -62,21 +62,22 @@ footer{
 
 .nav_contact{
     position: relative;
-    top: 135px;
+    top: 45px;
     right: 8px;
     padding: 10px;
     margin: 0px;
     color: #ffffff;
     font-family: 'Spinnaker', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav_parceiros{
     color: #ffffff;
     position: relative;
-    left:600px;
-    bottom:69px;
+    left: 600px;
+    bottom: 69px;
 }
 
 #menu_footer{
@@ -93,12 +94,12 @@ footer{
 }
 
 .logo-responsive{
-    max-width: 200px;
-    max-height: 150px;
-    width: auto;
-    height: auto;
+    width: 140px;
+    height: 135px;
     padding-left: 15px;
-    padding-top: 9px;
+    padding-top: 20px;
+    position: relative;
+    left: 10px;
 }
 
 .container_redes{
@@ -107,26 +108,29 @@ footer{
     width: 150px;
     height: 50px;
     position: relative;
-    bottom:-50px;
-    right: 100px; 
+    bottom: -50px;
+    right: 360px;
 }
 
 .midias{
-    width: 26px;
-    height: 26px;
-    margin-left: 8px;
-    margin-right: 8px;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
     position: relative;
     left:-280px;
-    bottom:-150px;
+    bottom: -150px;
+    cursor: pointer;
 }
 
 .gmail{
-    width: 36px;
-    height: 36px;
+    width: 45px;
+    height: 45px;
     position: relative;
     top: 145px;
     left: -270px; 
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .parceria{
@@ -138,26 +142,28 @@ footer{
     display: flex;
     justify-content: space-between;
     position: relative;
-    left: -230px;
-    bottom: 35px;
+    left: -215px;
+    bottom: 50px;
+    top: -5px;
 }
 
 .estacao{
-    width: 150px;
-    height: 70px;
     position: relative;
-    left:610px;
-    bottom:6px;
     opacity: 0.75;
+    width: 190px;
+    height: 90px;
+    bottom: 28px;
+    left: 680px;
 }
 
 .mastertech{
-    width: 100px;
-    height: 11px;
     position: relative;
-    left: 480px;
-    bottom:-79px;
+    bottom: -79px;
     opacity: 0.75;
+    width: 190px;
+    height: 22px;
+    top: 75px;
+    left: 484px;
 }
 
 .artemisia{
@@ -171,8 +177,26 @@ footer{
 
 .line_base{ 
     color: #3c7c21;
-    background-color: #3c7c21;;
+    background-color: #3c7c21;
     height: 20px;
     position: relative;
-    bottom: -135px;
-  }
+    bottom: -115px;
+}
+
+.text_int{
+    color: #ffffff;
+    width: 350px;
+    height: 80px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+    line-height: 2.5em;
+    padding-bottom: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    position: relative;
+    bottom: -3px;
+    left: 3px;
+    font-size: 12px;
+    width: 439px;
+}

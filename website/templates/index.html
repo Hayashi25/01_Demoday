@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Spinnaker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navindex.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <script defer src="{% static 'js/index.js' %}"></script>
     <title>Projeto Formiguinha</title>
@@ -26,22 +26,42 @@
     </section>
 
     <section class="dados">
-        <div></div>
-        <div></div>
-        <div></div>
+        <h2 class=titulo_fonte> <span class=base_fonte> PORQUE </span> FAZEMOS</h2>
+        <div class="imgFazemos">
+            <div>
+                <img src="img/passos.png" alt="">
+    
+            </div>
+            <div>
+                <img src="img/passos.png" alt="">
+    
+            </div>
+            <div>
+                <img src="img/passos.png" alt="">
+    
+            </div>
+        </div>
     </section>
-
+    
     <section class="steps">
+        <h2 class=titulo_section2> <span class=base_fonte>COMO </span> FAZEMOS</h2>
         <div>
-            <img src="static/img/index/passos.png" alt="">
-        </div>
-        <div>
-            <img src="static/img/index/passos.png" alt="">
-        </div>
-        <div>
-            <img src="static/img/index/passos.png" alt="">
+            <a href="#">
+                <p>link 1</p>
+                <img src="img/step.png" alt="">
+            </a>
+            <span>----</span>
+            <a href="#">
+                <p>link 2</p>
+                <img src="img/step.png" alt="">
+            </a>
+            <span>----</span>
+            <a href="#">
+                <p>link 3</p>
+                <img src="img/step.png" alt="">
+            </a>
         </div>
     </section>
-
+    
     {% include 'shared/footer.html' %}
 </body>

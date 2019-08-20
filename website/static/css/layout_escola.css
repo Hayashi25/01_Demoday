@@ -1,16 +1,10 @@
 body{
     font-family: 'Spinnaker', sans-serif;
     display: grid;
-    grid-template-areas: 'nav nav nav nav'
-                         'section section section section'
+    grid-template-areas: 'section section section section'
                          'footer footer footer footer';
-    grid-template-rows: 10vh 90vh 30vh;
-    grid-template-columns: 32.9vw 32.9vw 32.9vw;         
-}
-
-nav{
-    grid-area: nav;
-    z-index: 3;
+    grid-template-rows: 100vh 30vh;
+    grid-template-columns: 49vw 49vw;     
 }
 
 section{

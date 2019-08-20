@@ -1,13 +1,15 @@
 body{
     display: grid;
-    grid-template-areas: 'carrossel carrossel carrossel carrossel'
+    grid-template-areas: 'nav nav nav nav'
+        'carrossel carrossel carrossel carrossel'
         'dados dados dados dados'
         'steps steps steps steps'
         'footer footer footer footer';
-    grid-template-rows: 100vh 60vh 60vh 30vh;
-    grid-template-columns: 24.7vw 24.7vw 24.7vw 24.7vw;
+    grid-template-rows: 11.5vh 90vh 60vh 60vh 30vh;
+    grid-template-columns: 24.79vw 24.79vw 24.79vw 24.79vw;
     margin: 0;
     font-family: 'Spinnaker', sans-serif;
+    overflow-x: hidden;
 }
 
 #carrossel{
@@ -55,7 +57,6 @@ body{
 }
 
 .steps{
-    /* background-color: #F2DA5E; */
     grid-area: steps;
     display: flex;
     align-items: center;
@@ -69,4 +70,104 @@ body{
 .steps div img{
     height: 80px;
     width: 80px;
+}
+
+.dados {
+    background-color: #fdfdfd;
+    grid-area: dados;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.imgFazemos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.imgFazemos div{
+    padding: 50px;
+}
+
+.titulo_fonte{
+    position: absolute;
+    top: 660px;
+    left: 160px;
+    width: 150px;
+    letter-spacing: 2px;
+    font-size:30px;
+    font-weight: bold;
+}
+
+.base_fonte{
+    color: #3C7c21;
+    font-weight: bolder;
+    font-size:40px;
+    padding: 0px;
+}
+
+.steps{
+    grid-area: steps;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #319ac7;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+.steps h3{
+    padding-bottom: 30px;
+}
+
+.steps div{
+    padding: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.steps div a{
+
+    background-image: url("img/fundo_steps.png");
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    align-items: flex-end; 
+}
+.steps div span{
+    padding:20px;
+}
+
+.steps div a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #e97926;
+}
+
+.steps div img{
+    height: 95px;
+    width: 95px;
+}
+
+.titulo_section2{
+    position: absolute;
+    top: 1050px;
+    bottom: 0px;
+    left: 160px;
+    width: 150px;
+    letter-spacing: 2px;
+    font-size:30px;
+    font-weight: bold;
+    margin-left: 0px;
 }
