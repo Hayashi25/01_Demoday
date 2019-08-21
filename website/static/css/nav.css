@@ -9,16 +9,9 @@
     font-family: 'Spinnaker', sans-serif;
     transition: .7s;
     width: 100%;
-    height: 10%;
+    height: 12%;
     z-index: 2;
     text-size-adjust: 15px;
-    /* font-family: 'Exo 2', sans-serif; */
-    /* background-color: #084630; * COR ORIGINAL/
-    /* background-color: #214001; TESTE 1 */
-    /* background-color: #1E9146; TESTE 2 */
-    /* background-color: #29402F; */
-    /* font-family: 'Open Sans', sans-serif; */
-    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .nav_help{
@@ -35,7 +28,7 @@
     font-family: 'Spinnaker', sans-serif;
 }
 .logo_superior{
-    width: 70px;
+    width: 90px;
     padding-top: 10px;
     opacity: 0.87;
 }

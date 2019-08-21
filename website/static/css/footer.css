@@ -12,6 +12,23 @@
 
 }
 
+/* ESTILIZAR TITULO FOOTER */
+.nav_intro{
+    color: #ffffff;
+    position: relative;
+    left: 310px;
+    text-decoration: none;
+}
+
+.nav_miss{
+    color: #ffffff;
+    position: relative;
+    left:15px;
+    font-size:15px;
+    text-decoration: none;
+}
+
+/* ESTILIZAR TEXTO MISSÃO */
 .text_int{
     color: #ffffff;
     width: 350px;
@@ -24,10 +41,8 @@
     border-top-width: 0px;
     border-bottom-width: 0px;
     position: relative;
-    bottom: -3px;
-    left: 3px;
-    font-size: 12px;
-    width: 439px;
+    bottom: -8px;
+    left:15px;
 }
 /*  ESTILIZAR FOOTER - LADO ESQUERDO*/
 
@@ -188,3 +203,12 @@ footer{
   }
 
 
+  /* ESTILIZAR LINHA BASE DO FOOTER */
+.line_base{ 
+    color: #3C7c21;
+    background-color:#3C7c21;
+    height: 20px;
+    position: relative;
+    bottom: -105px;
+    opacity: 0.65;
+}

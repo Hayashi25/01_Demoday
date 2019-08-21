@@ -1,7 +1,6 @@
 body{
     display: grid;
-    grid-template-areas: 'nav nav nav nav'
-        'carrossel carrossel carrossel carrossel'
+    grid-template-areas: 'carrossel carrossel carrossel carrossel'
         'dados dados dados dados'
         'steps steps steps steps'
         'footer footer footer footer';
@@ -9,7 +8,6 @@ body{
     grid-template-columns: 25vw 25vw 25vw 23.7vw;
     margin: 0;
     font-family: 'Spinnaker', sans-serif;
-    overflow-x: hidden;
 }
 
 /* ESTRUTURAR O CARROSSEL  */
@@ -115,61 +113,6 @@ body{
     padding-bottom: 30px;
 }
 
-.dados {
-    background-color: #fdfdfd;
-    grid-area: dados;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px;
-}
-
-.imgFazemos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.imgFazemos div{
-    padding: 50px;
-}
-
-.titulo_fonte{
-    position: absolute;
-    top: 660px;
-    left: 160px;
-    width: 230px;
-    letter-spacing: 2px;
-    font-size:30px;
-    font-weight: bold;
-}
-
-.base_fonte{
-    color: #3C7c21;
-    font-weight: bolder;
-    font-size:40px;
-    padding: 0px;
-}
-
-.steps{
-    grid-area: steps;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #319ac7;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-}
-
-.steps h3{
-    padding-bottom: 30px;
-}
-
 .steps div{
     padding: 30px; 
     display: flex;
@@ -197,11 +140,16 @@ body{
     color: #e97926;
 }
 
+.nav_help{
+    word-spacing: 5x;
+}
+
 .steps div img{
     height: 95px;
     width: 95px;
 }
 
+/* ESTILIZAR TITULO DA SEGUNDA SECTION */
 .titulo_section2{
     font-size:30px;
     font-weight: bold;
