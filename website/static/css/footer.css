@@ -188,12 +188,3 @@ footer{
   }
 
 
-  /* ESTILIZAR LINHA BASE DO FOOTER */
-.line_base{ 
-    color: #3C7c21;
-    background-color:#3C7c21;
-    height: 20px;
-    position: relative;
-    bottom: -105px;
-    opacity: 0.65;
-}
