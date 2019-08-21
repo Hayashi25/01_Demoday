@@ -11,13 +11,17 @@ h1{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    height: 100%;
+    height: 35%;
     z-index: 2;
     position: absolute;
-    top: 210px;
+    top: 245px;
     right: 0px;
     left: 0px;
     bottom: 0px;
+}
+
+.quadrados a{
+    height: 220px;
 }
 
 .quadrado{
@@ -83,10 +87,10 @@ h1{
 }
 
 .alert{
-    width: 220px;
-    position: relative;
-    bottom: 30px;
+    width: 395px;
+    margin-top: 335px;
     padding: .75rem 1.25rem;
+    padding-bottom: 8px;
     border: 1px solid transparent;
     border-top-color: transparent;
     border-right-color: transparent;
@@ -96,16 +100,12 @@ h1{
 }
 
 .alert-dismissible .close{
-    position: absolute;
-    left: 210.367px;
-    bottom: 25px;
-    top: -4px;
-    right: 0;
-    padding: .75rem 1.25rem;
     color: inherit;
 }
 
 .close{
+    position: relative;
+    bottom: 4px;
     float: right;
     font-size: 1.5rem;
     font-weight: 700;
@@ -122,10 +122,10 @@ h1{
     width: 715px;
     height: 92px;
     margin-left: 317px;
-    margin-top: 29px;
+    margin-top: 40px;
 }
 
 .msg_escola{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }

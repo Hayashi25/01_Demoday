@@ -1,3 +1,13 @@
+body{
+    display: grid;
+    grid-template-areas: 'nav nav nav nav' 
+                        'section section section section'
+                        'footer footer footer footer';
+    grid-template-rows: 10vh 160vh 30vh;
+    grid-template-columns: 24.7vw 24.7vw 24.7vw 24.7vw;
+    overflow-x: hidden;
+}
+
 .hd_pagedit{
     display: flex;
     flex-direction: row; 
@@ -8,6 +18,7 @@
 .img_pagedit{
     margin-left: 0px;
     margin-top: 29px;
+    margin-bottom: 15px;
     width: 715px;
     height: 92px;
 }
@@ -22,6 +33,7 @@
     color: white;
     background-color: #1e3459;
     border: 0;
+    border-radius: 3px;
     font-weight: bolder;
     cursor: pointer;
     width: 177px;
@@ -34,11 +46,12 @@
 }
 
 .select_turma{
+    border-radius: 3px;
     padding: 0px;
     color: black;
     background-color: white;
     font-weight: lighter;
-    border: 0.5px solid #1e3459;
+    border: 2px solid #1e3459;
 }
 
 .aluno{
@@ -49,6 +62,16 @@
     background-color: #1e3459;
     color: white;
     width: 202.5px;
+    height: 138px;
+    border-radius: 5px;
+}
+
+.aluno .for_aluno{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 173.5px;
+    margin-left: 10px;
+    margin-top: 12px;
 }
 
 .lix_aluno{
@@ -87,4 +110,13 @@
     width: 70%;
     font-size: 9px;
     margin-left: 30px;
+}
+
+.img_header{
+    background-image: url('/static/img/escola/bgescola.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 195px;
+    position: absolute;
+    top: 920px;
 }

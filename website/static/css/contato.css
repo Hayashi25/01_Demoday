@@ -8,6 +8,7 @@ body{
     margin: 0px;
     /* font-family: 'Spinnaker', sans-serif; */
     font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
 }
 
 nav{
@@ -36,13 +37,14 @@ h2{
     margin-top: 30px;
     margin-bottom: 0px;
     font-size: 24px;
-    color: #29402F;
+    color: black;
 }
 
 .p_contato{
     text-align: center;
+    margin-top: 6px;
     font-size: 14px;
-    color: #29402F;
+    color: black;
 }
 
 .img_formiga{
@@ -91,7 +93,7 @@ input{
     border-top-style: none;
     border-left-style: none;
     border-right-style: none;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #3c7c21;
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     font-weight: lighter;
@@ -106,7 +108,7 @@ textarea:focus{
 }
 
 textarea{
-    border: solid 2px black;
+    border: solid 2px #3c7c21;
     border-radius: 5px;
     padding: 6px;
     font-family: 'Ubuntu', sans-serif;
