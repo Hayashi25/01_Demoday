@@ -11,7 +11,7 @@ body{
                         'botao_loja itens '
                         'botao_loja itens ';
     grid-template-columns: 23vw 75.6vw;
-    grid-template-rows: 40vh 55vh 55vh 55vh;
+    grid-template-rows: 45vh 55vh 55vh 55vh;
 }
 
 .titulo{
@@ -51,159 +51,162 @@ body{
 }
 
 .botao_loja h3{
-position: absolute;
-bottom: 150px;
-font-size : 25px;
-/* color: #e6f1e1; */
-/* color: #319ac7; */
-color: #e8f8ff;
+    position: absolute;
+    bottom: 250px;
+    font-size : 25px;
+    /* color: #e6f1e1; */
+    /* color: #319ac7; */
+    color: #e8f8ff;
 }
 
 .botao_loja div{
-padding: 20px;
+    padding: 20px;
 }
 
 .botao_loja div img:hover{
-height: 150px;
-width: 160px;
-transition: 1s;
+    height: 150px;
+    width: 160px;
+    transition: 1s;
 }
 
 
 .botao_loja div img{
-background-color: #fdfdfd;
-height: 140px;
-width: 150px;
-border: #5eadcf63 10px solid;
-border-radius: 45px;
+    background-color: #fdfdfd;
+    height: 140px;
+    width: 150px;
+    border: #5eadcf63 10px solid;
+    border-radius: 45px;
 /* z-index: 4; */
 }
 
 .itens{
-grid-area: itens;
-border-top: 10px solid  #cef2bd;
-padding-top: 60px;
+    grid-area: itens;
+    border-top: 10px solid  #cef2bd;
+    padding-top: 60px;
 }
 
 .fileira{
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .fileira div{
-border: #209d73 1px solid;
-border-radius: 10px;
-padding: 30px;
-height: 300px;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column-reverse;
-text-decoration: none;
-font-size: 25px;
-color: #209d73;
+    border: #209d73 1px solid;
+    border-radius: 10px;
+    padding: 30px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-decoration: none;
+    font-size: 25px;
+    color: #209d73;
 }
 
 .fileira div:hover{
-background-color: #209d7356;
+    background-color: #209d7356;
 }
 
 .fileira{
-padding: 50px;
+    padding: 50px;
 }
 
 .preco{
    display: flex;
    align-items: center;
 }
+
 .moeda{
     height: 10px;
     width: 10px;
 }
+
 .fileira div p{
-border-top: #0e1214 1px solid;
-padding-top: 10px;
+    border-top: #0e1214 1px solid;
+    padding-top: 10px;
 }
 
 .fileira div img {
-border-radius: 10px;
-height: 100px;
-width: 100px;
-padding-top: 15px;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+    padding-top: 15px;
 }
 
 #materiais{
-display: none;
-z-index: 4;
-position: absolute;
-width: 100%;
-height: 195%;
-top: 1px;
-background: rgba(0, 0, 0, 0.349);
+    display: none;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    height: 210%;
+    top: 1px;
+    background: rgba(0, 0, 0, 0.349);
 }
+
 .centro{
-padding: 500px;
-padding-left: 350px;
-display: flex;
-align-items: center;
+    padding: 500px;
+    padding-left: 420px;
+    display: flex;
+    align-items: center;
 
 }
 
 #material_Papel, #material_Plastico,
 #material_Metal, #material_Vidro  {
-background-color: #fdfdfd;
-padding: 40px;
-padding-left: 40px;
-padding-right: 50px;
-border-radius: 10px;
-align-items: center;
-flex-direction: row;
-border: #cef2bd 30px solid;
+    background-color: #fdfdfd;
+    padding: 40px;
+    padding-left: 40px;
+    padding-right: 50px;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: row;
+    border: #cef2bd 30px solid;
 
 }
 
 .centro div span{
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: space-around;
-padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 .centro div span p{
-text-align: center;
-max-width:100px;
+    text-align: center;
+    max-width:100px;
 }
 
 #fechar{
-background-color: #0e121462;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 8px;
-padding-right: 8px;
-border-radius: 20px;
-position: relative;
-bottom: 60px;
-left: 490px;
+    background-color: #0e121462;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 20px;
+    position: relative;
+    bottom: 90px;
+    left: 390px;
 }
 
 #fechar:hover{
-cursor: pointer;
+    cursor: pointer;
 }
 
 #material_Plastico{
-display: none;
+    display: none;
 }
 
 #material_Papel{
-display: none;
+    display: none;
 }
 
 #material_Metal{
-display: none;
+    display: none;
 }
 
 #material_Vidro{
-display: none;
+    display: none;
 }
