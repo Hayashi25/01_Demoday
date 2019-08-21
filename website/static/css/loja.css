@@ -11,7 +11,7 @@ body{
                         'botao_loja itens '
                         'botao_loja itens ';
     grid-template-columns: 23vw 75.6vw;
-    grid-template-rows: 55vh 66vh 66vh 66vh;
+    grid-template-rows: 40vh 55vh 55vh 55vh;
 }
 
 .titulo{
@@ -60,7 +60,7 @@ color: #e8f8ff;
 }
 
 .botao_loja div{
-padding: 40px;
+padding: 20px;
 }
 
 .botao_loja div img:hover{
@@ -76,13 +76,13 @@ height: 140px;
 width: 150px;
 border: #5eadcf63 10px solid;
 border-radius: 45px;
-z-index: 4;
+/* z-index: 4; */
 }
 
 .itens{
 grid-area: itens;
 border-top: 10px solid  #cef2bd;
-padding-top: 80px;
+padding-top: 60px;
 }
 
 .fileira{
@@ -138,7 +138,7 @@ display: none;
 z-index: 4;
 position: absolute;
 width: 100%;
-height: 280%;
+height: 195%;
 top: 1px;
 background: rgba(0, 0, 0, 0.349);
 }
@@ -153,9 +153,9 @@ align-items: center;
 #material_Papel, #material_Plastico,
 #material_Metal, #material_Vidro  {
 background-color: #fdfdfd;
-padding: 4px;
-padding-left: 1px;
-padding-right: 1px;
+padding: 40px;
+padding-left: 40px;
+padding-right: 50px;
 border-radius: 10px;
 align-items: center;
 flex-direction: row;
@@ -184,8 +184,8 @@ padding-left: 8px;
 padding-right: 8px;
 border-radius: 20px;
 position: relative;
-bottom: 65px;
-left: 430px;
+bottom: 60px;
+left: 490px;
 }
 
 #fechar:hover{

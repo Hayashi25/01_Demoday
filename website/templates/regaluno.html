@@ -1,4 +1,9 @@
 {% extends 'shared/layout_escola.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/regaluno.css' %}">
+{% endblock %}
 
 {% block titulo %}
 <title>Registro de Alunos</title>

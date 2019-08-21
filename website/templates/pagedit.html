@@ -1,5 +1,11 @@
 {% extends 'shared/layout_escola.html' %}
 
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/pagedit.css' %}">
+{% endblock %}
+
 {% block titulo %}
 <title>Alunos</title>
 {% endblock %}
@@ -28,7 +34,7 @@
 <div class="alunos">
     {% for aluno in alunos %}
         <div class="aluno">
-            <p>{{aluno.nome_aluno}} {{aluno.sobrenome_aluno}}</p>
+            <p class="for_aluno">{{aluno.nome_aluno}} {{aluno.sobrenome_aluno}}</p>
             <p class="dt_time">Última modificação: {{aluno.data_atualizacao}}</p>
             <a class="a_aluno" href="/editaraluno/{{aluno.id}}"><img class="lp_aluno" src="/static/img/escola/edit_b.png" alt=""></a>
             <a class="a_aluno" href="/removeraluno/{{aluno.id}}"><img class="lix_aluno" src="/static/img/escola/lixeira.png" alt=""></a>
