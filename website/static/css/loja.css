@@ -1,24 +1,39 @@
 
-/* ESTILIZAR LOJINHA */
+/* ------------------ ESTILIZAR LOJINHA --------------------*/
 
 body{
+    margin: 0;
+}
+.loja{
     display: grid;
     grid-template-areas: 'titulo titulo '
                         ' botao_loja itens '
                         'botao_loja itens '
                         'botao_loja itens ';
     grid-template-columns: 23vw 75.6vw;
-    grid-template-rows: 30vh 55vh 55vh 55vh;
-   
+    grid-template-rows: 55vh 66vh 66vh 66vh;
 }
 
 .titulo{
     grid-area: titulo;
-    background-color: #319ac7;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("img/fundo_lol.png");
+    background-image: url("/static/img/loja/img2.jpg");
+}
+
+.titulo div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    height: 100%;
+}
+
+.titulo div h2{
+    font-size : 40px;
+    color: #e6f1e1;
 }
 
 .botao_loja{
@@ -29,82 +44,166 @@ body{
     flex-direction: column;
     /* background-color: rgb(42, 125, 165); */
     background-color: #209d73;
-    border-top: 10px solid  #f4d762;
- 
-}
-.botao_loja div{
-    padding: 30px;
+    border-top: 10px solid  #cef2bd;
+    border-right-width: 15px; 
+    border-right-style: solid; 
+    border-right-color: #cff2bf;
 }
 
+.botao_loja h3{
+position: absolute;
+bottom: 150px;
+font-size : 25px;
+/* color: #e6f1e1; */
+/* color: #319ac7; */
+color: #e8f8ff;
+}
+
+.botao_loja div{
+padding: 40px;
+}
+
+.botao_loja div img:hover{
+height: 150px;
+width: 160px;
+transition: 1s;
+}
+
+
 .botao_loja div img{
-    background-color: #fdfdfd;
-    height: 140px;
-    width: 150px;
-    border: #319ac7 10px solid;
-    border-radius: 45px;
+background-color: #fdfdfd;
+height: 140px;
+width: 150px;
+border: #5eadcf63 10px solid;
+border-radius: 45px;
+z-index: 4;
 }
 
 .itens{
-    grid-area: itens;
-    border-top: 10px solid  #f4d762;
-    padding-top: 60px;
+grid-area: itens;
+border-top: 10px solid  #cef2bd;
+padding-top: 80px;
 }
 
 .fileira{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
 }
 
 .fileira div{
-    border: #209d73 1px solid;
-    border-radius: 10px;
-    padding: 20px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column-reverse;
-    text-decoration: none;
-    font-size: 25px;
-    color: #209d73;
+border: #209d73 1px solid;
+border-radius: 10px;
+padding: 30px;
+height: 300px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column-reverse;
+text-decoration: none;
+font-size: 25px;
+color: #209d73;
 }
 
 .fileira div:hover{
-    background-color: #209d7356;
+background-color: #209d7356;
 }
 
 .fileira{
-    padding: 10px;
+padding: 50px;
+}
+
+.preco{
+   display: flex;
+   align-items: center;
+}
+.moeda{
+    height: 10px;
+    width: 10px;
 }
 .fileira div p{
-    border-top: #0e1214 1px solid;
-    padding-top: 10px;
+border-top: #0e1214 1px solid;
+padding-top: 10px;
 }
 
 .fileira div img {
-    border-radius: 10px;
-    height: 95px;
-    width: 95px;
+border-radius: 10px;
+height: 100px;
+width: 100px;
+padding-top: 15px;
 }
 
-#materialPlastico{
-    display: none;
-    z-index: 4;
-    position: absolute;
-    width: 100%;
-    height: 195%;
-    background: rgba(0, 0, 0, 0.349);
+#materiais{
+display: none;
+z-index: 4;
+position: absolute;
+width: 100%;
+height: 280%;
+top: 1px;
+background: rgba(0, 0, 0, 0.349);
 }
 .centro{
-    padding: 200px;
-    padding-left: 500px;
-    position: fixed;
+padding: 500px;
+padding-left: 350px;
+display: flex;
+align-items: center;
+
 }
-.centro div{
-    background-color: #fdfdfd;
-    padding: 80px;
-    padding-left: 90px;
-    padding-right: 90px;
-    border-radius: 10px;
+
+#material_Papel, #material_Plastico,
+#material_Metal, #material_Vidro  {
+background-color: #fdfdfd;
+padding: 4px;
+padding-left: 1px;
+padding-right: 1px;
+border-radius: 10px;
+align-items: center;
+flex-direction: row;
+border: #cef2bd 30px solid;
+
+}
+
+.centro div span{
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: space-around;
+padding: 20px;
+}
+
+.centro div span p{
+text-align: center;
+max-width:100px;
+}
+
+#fechar{
+background-color: #0e121462;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 8px;
+padding-right: 8px;
+border-radius: 20px;
+position: relative;
+bottom: 65px;
+left: 430px;
+}
+
+#fechar:hover{
+cursor: pointer;
+}
+
+#material_Plastico{
+display: none;
+}
+
+#material_Papel{
+display: none;
+}
+
+#material_Metal{
+display: none;
+}
+
+#material_Vidro{
+display: none;
 }

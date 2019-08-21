@@ -1,76 +1,16 @@
-/* body{
+body{
     display: grid;
     grid-template-areas: 'nav nav nav nav'
         'carrossel carrossel carrossel carrossel'
         'dados dados dados dados'
         'steps steps steps steps'
         'footer footer footer footer';
-    grid-template-rows: 11.5vh 90vh 60vh 60vh 30vh;
-    grid-template-columns: 24.79vw 24.79vw 24.79vw 24.79vw;
+    grid-template-rows: 100vh 85vh 85vh 30vh;
+    grid-template-columns: 25vw 25vw 25vw 23.7vw;
     margin: 0;
     font-family: 'Spinnaker', sans-serif;
     overflow-x: hidden;
 }
-
-#carrossel{
-    grid-area: carrossel;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-area: carrossel;
-}
-
-#carrossel div{
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-}
-
-#carrossel img{
-    position: absolute;
-    height: 300px;
-    width: 300px;
-}
-
-.geometrica{
-    border-top: 100px solid transparent;
-    border-right-width: 1500px; 
-    border-right-style: solid; 
-    border-right-color: #fdfdfd;
-}
-
-.sombra{
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    background: rgba(0, 0, 0, 0.349);
-    width: 100%;
-    height: 100%;
-    top: 0;
-}
-.dados{
-    background-color: rgb(31, 42, 140);
-    grid-area: dados;
-}
-
-.steps{
-    grid-area: steps;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.steps div{
-    padding: 20px;
-}
-
-.steps div img{
-    height: 80px;
-    width: 80px;
-}  */
-
 
 /* ESTRUTURAR O CARROSSEL  */
 #carrossel{
@@ -96,12 +36,12 @@
     flex-wrap: nowrap;
     align-items: flex-end;
 }
-/* .geometrica{
+.geometrica{
     border-top: 100px solid transparent;
     border-right-width: 1500px; 
     border-right-style: solid; 
     border-right-color: #fdfdfd;
-} */
+}
 
 #carrossel img{
     position: absolute;
@@ -120,15 +60,20 @@
     top: 0;
 }
 
-/* CRIAR CAIXA DE IMAGEM COM DESCRCAO EMBAIXO, SEDUNDA SECTION */
+
+/* ----------------CRIAR CAIXA DE IMAGEM COM DESCRCAO EMBAIXO, SEDUNDA SECTION----------------------- */
 .dados {
     background-color: #fdfdfd;
     grid-area: dados;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     padding: 30px;
+}
+.base_f{
+    font-weight: bolder;
+    font-size:35px;
+    padding-top: 5px;
 }
 .imgFazemos {
     display: flex;
@@ -142,10 +87,6 @@
 
 /* ESTILIZAR TITULO DA PRIMEIRA SECTION */
 .titulo_fonte{
-    position: absolute;
-    top: 680px;
-    left:160px;
-    width: 150px;
     letter-spacing: 0.1em;
     font-size:30px;
     font-weight: bold;
@@ -155,10 +96,11 @@
     color: #3C7c21;
     font-weight: bolder;
     font-size:40px;
-    padding: 0px;
 }
 
-/* CRIAR LINKS NA TERCEIRA SECTION */
+
+
+/* ----------------- CRIAR LINKS NA TERCEIRA SECTION ------------------- */
 .steps{
     /* background-color: #F2DA5E; */
     grid-area: steps;
@@ -237,8 +179,7 @@
 }
 
 .steps div a{
-    /* background-color: #9bd21f; */
-    background-image: url("{% static 'img/index/fundo_steps.png' %}");
+    background-image: url("/static/img/index/fundo_steps.png");
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 20px;
@@ -262,12 +203,6 @@
 }
 
 .titulo_section2{
-    position: absolute;
-    top: 1050px;
-    bottom: 0px;
-    left: 160px;
-    width: 150px;
-    letter-spacing: 2px;
     font-size:30px;
     font-weight: bold;
     margin-left: 0px;

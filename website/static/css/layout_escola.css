@@ -10,7 +10,8 @@ body{
 }
 
 nav{
-    grid-area: nav;
+    grid-area: na;
+    z-index: 3;
 }
 
 section{

@@ -1,21 +1,21 @@
 body{
     display: grid;
-    grid-template-areas: 'nav nav nav nav'
-                         'section section section section'
-                         'footer footer footer footer';
-    grid-template-rows: 10vh 90vh 30vh;
+    grid-template-areas: 'na na na na'
+                         'sectio sectio sectio sectio'
+                         'foote foote foote foote';
+    grid-template-rows:  90vh 30vh;
     grid-template-columns: 32.9vw 32.9vw 32.9vw;
-    margin: 0px;
+    margin: 0;
     /* font-family: 'Spinnaker', sans-serif; */
     font-family: 'Ubuntu', sans-serif;
 }
 
 nav{
-    grid-area: nav;
+    grid-area: na;
 }
 
 section{
-    grid-area: section;
+    grid-area: sectio;
     /* background-color: white; */
     background-image: url('/static/img/contato/fundo.jpg');
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@ section{
 }
 
 footer{
-    grid-area: footer;
+    grid-area: foote;
 }
 
 h2{
