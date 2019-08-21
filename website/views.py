@@ -31,6 +31,7 @@ def cadastro_escola(request):
             user = User.objects.create_user(username=request.POST['codigo_acesso'],
                                             password=request.POST['senha_acesso'],
                                             email=request.POST['email'])
+            messages.success(request, 'Escola cadastrada.')
             return render(request, 'login.html')
     else:
         form = CadastroEscola()
@@ -49,7 +50,7 @@ def login_escola(request):
             auth_login(request, user)
             return redirect ("/portaldaescola")
         else:
-            messages.error(request, 'Usuário e/ou senha inválido(s). Favor tentar novamente.')
+            messages.error(request, 'Usuário e/ou senha inválido(s).')
     context = {}
     return render(request, 'login.html', context)
 

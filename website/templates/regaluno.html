@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block conteudo %}
-<h1>aqui vai estar escrito registro de aluno</h1>
+<img class="painelctrl" src="/static/img/escola/registrodealuno.png" alt="">
 
 <div class="cadastro_aluno">
     <form method="POST">
         {% csrf_token %}
         {% for field in form %}
-        <div class="divform">
+        <div class="divaluno">
             {{ field.label_tag }}
             {{ field }}
             {{ field.errors }}

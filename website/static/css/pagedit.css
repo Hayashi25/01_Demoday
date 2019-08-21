@@ -1,0 +1,90 @@
+.hd_pagedit{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+}
+
+.img_pagedit{
+    margin-left: 0px;
+    margin-top: 29px;
+    width: 715px;
+    height: 92px;
+}
+
+.buscador{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.buscar_aluno{
+    color: white;
+    background-color: #1e3459;
+    border: 0;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 177px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.buscar_aluno:hover{
+    background-color: #30599e;
+}
+
+.select_turma{
+    padding: 0px;
+    color: black;
+    background-color: white;
+    font-weight: lighter;
+    border: 0.5px solid #1e3459;
+}
+
+.aluno{
+    float: left;
+    margin: 11px;
+    justify-content: center;
+    text-align: center;
+    background-color: #1e3459;
+    color: white;
+    width: 202.5px;
+}
+
+.lix_aluno{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background-color:#e94b46bb;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.lp_aluno{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background-color: #bbd378be;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.lp_aluno:hover{
+    background-color: #bad378;
+    transition: 0.7s;
+    border-radius: 7px;
+}
+
+.lix_aluno:hover{
+    background-color: #e94b46;
+    transition: 0.7s;
+    border-radius: 7px;
+}
+
+.dt_time{
+    text-align: center;
+    width: 70%;
+    font-size: 9px;
+    margin-left: 30px;
+}

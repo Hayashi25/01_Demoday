@@ -6,23 +6,30 @@
 {% endblock %}
 
 {% block conteudo %}
-<h1>aqui vai estar escrito painel de controle</h1>
+<img class="painelctrl" src="/static/img/escola/paineldecontrole.png" alt="">
 
 <div class="quadrados">
-    <a href="/registrodealuno">
-        <div class="quadrado azul"><img class="add" src="/static/img/escola/add.png" alt=""></div>
+    <a class="a_qdr" href="/registrodealuno">
+        <div class="quadrado azul"><img class="add" src="/static/img/escola/add.png" alt="">
+            <p id="cd_aln" class="p_qdr">Cadastrar aluno</p>
+        </div>
     </a>
-    <a href="/edicaodealuno">
-        <div class="quadrado verde"><img class="edit" src="/static/img/escola/edit.png" alt=""></div>
+    <a class="a_qdr" href="/edicaodealuno">
+        <div class="quadrado verde"><img class="edit" src="/static/img/escola/edit.png" alt="">
+            <p class="p_qdr">Editar aluno</p>
+        </div>
     </a>
-    <a href="/pontuacao">
-        <div class="quadrado vermelho"><img class="star" src="/static/img/escola/star.png" alt=""></div>
+    <a class="a_qdr" href="/pontuacao">
+        <div class="quadrado vermelho"><img class="star" src="/static/img/escola/star.png" alt="">
+        <p class="p_qdr">Atribuir pontuação</p>
+        </div>
     </a>
 </div>
 
-<div>
+<div class="msg_escola">
     {% for message in messages %}
-    <div class="alert alert-success">
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Sucesso!</strong> {{ message }}
     </div>
     {% endfor %}

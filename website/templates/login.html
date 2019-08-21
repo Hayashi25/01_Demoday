@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <script defer src="{% static 'js/login.js' %}"></script>
-    <script defer src="{% static 'js/nav.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Página de Login</title>
 </head>
 
@@ -38,15 +40,23 @@
 
                 <div class="ar_erro">
                     {% for message in messages %}
-                    <div class="alert alert-danger">
-                        <strong>Erro!</strong> {{ message }}
-                    </div>
+                        {% if message.tags == 'error'%}
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Erro!</strong> {{ message }}
+                        </div>
+                        {% elif message.tags == 'success'%}
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>                            
+                            <strong>Sucesso!</strong> {{ message }}
+                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
 
             <div id="login_aluno">
-                <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.jpg" alt="">
+                <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.png" alt="">
                 <form action="" method="POST">
                     {% csrf_token %}
                     <img class="pop_upal" src="static/img/login/student.png" alt="">
@@ -59,7 +69,7 @@
             </div>
 
             <div id="login_escola">
-                <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.jpg" alt="">
+                <img onclick="javascript: voltarOpcoes();" id="back" class="back" src="static/img/login/testeback.png" alt="">
                 <form action="login" method="POST">
                     {% csrf_token %}
                     <img class="pop_upsc" src="static/img/login/school.png" alt="">
